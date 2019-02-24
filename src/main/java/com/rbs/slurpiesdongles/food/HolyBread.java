@@ -1,34 +1,32 @@
 package com.rbs.slurpiesdongles.food;
 
-import com.rbs.slurpiesdongles.SlurpiesDongles;
+import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.init.ModFood;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
 public class HolyBread extends ItemFood {
-    public HolyBread(int amount, float saturation, boolean isWolfFood, String name)
-    {
-        super(amount, saturation, isWolfFood);
-        this.setHasSubtypes(true);
+    public HolyBread(int amount, float saturation, boolean isWolfFood, String name, Item.Properties builder) {
+        super(amount, saturation, isWolfFood,  builder);
+
         this.setAlwaysEdible();
-        this.setMaxStackSize(16);
-        setCreativeTab(SlurpiesDongles.creativeTab);
 
-        setUnlocalizedName(name);
-        setRegistryName(name);
+        this.setRegistryName(Reference.MODID, name);
+        ModFood.FOODS.add(this);
     }
-
-    @SideOnly(Side.CLIENT)
+   @Override
     public boolean hasEffect(ItemStack stack)
     {
         return true;
@@ -39,14 +37,14 @@ public class HolyBread extends ItemFood {
      */
     public EnumRarity getRarity(ItemStack stack)
     {
-        return stack.getMetadata() == 0 ? EnumRarity.EPIC : EnumRarity.EPIC;
+        return stack.getCount() == 0 ? EnumRarity.EPIC : EnumRarity.EPIC;
     }
 
     public void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
         if (!worldIn.isRemote)
         {
-            if (stack.getMetadata() > 0)
+            if (stack.getCount() > 0)
             {
                 player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 1200, 1));//200 = 10 seconds in game
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 6000, 0));
@@ -62,10 +60,9 @@ public class HolyBread extends ItemFood {
             }
         }
     }
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
-    {
-        tooltip.add("This is the new craftable God Apple, but it's bread!");
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(new TextComponentString("Craftable God Apple, but bread instead"));
     }
 
 }

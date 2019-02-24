@@ -1,103 +1,135 @@
 package com.rbs.slurpiesdongles;
 
-import com.rbs.slurpiesdongles.events.EventPigDrops;
-import com.rbs.slurpiesdongles.events.FuelHandler;
-import com.rbs.slurpiesdongles.events.OreDictHandler;
-import com.rbs.slurpiesdongles.events.SeedsDropFromGrass;
-import com.rbs.slurpiesdongles.gui.GuiHandler;
-import com.rbs.slurpiesdongles.init.*;
-import com.rbs.slurpiesdongles.proxy.CommonProxy;
-import com.rbs.slurpiesdongles.world.WorldGen;
+import com.rbs.slurpiesdongles.handlers.PigDrops;
+import com.rbs.slurpiesdongles.handlers.SeedsDropFromGrass;
+import com.rbs.slurpiesdongles.init.ModBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.pattern.BlockMatcher;
+import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.CompositeFeature;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.MinableConfig;
+import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.File;
 import java.util.Random;
 
-/**
- * Created by Consular on 7/19/2017.
- */
-@Mod(modid = SlurpiesDongles.modId, name = SlurpiesDongles.name, version = SlurpiesDongles.version, acceptedMinecraftVersions = SlurpiesDongles.MC_VERSION)
+// The value here should match an entry in the META-INF/mods.toml file
+@Mod(Reference.MODID)
 public class SlurpiesDongles {
 
-
-
     public static Random random = new Random();
-    public static final SDTab creativeTab = new SDTab();
-
-    public static Configuration Armor;
-    public static Configuration Charms;
-    public static Configuration Config;
-    public static Configuration OreAndFood;
-    public static Configuration Worldgen;
-
-        public static final String modId = "slurpiesdongles";
-        public static final String name = "Slurpies Dongles";
-        public static final String version = "2.1.5.2";
-        public static final String MC_VERSION = "1.12, 1.12.1, 1.12.2";
 
 
-        @SidedProxy(serverSide = "com.rbs.slurpiesdongles.proxy.CommonProxy", clientSide = "com.rbs.slurpiesdongles.proxy.ClientProxy")
-        public static CommonProxy proxy;
-
-        @Mod.Instance(modId)
     public static SlurpiesDongles instance;
 
-        @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-            Armor = new Configuration(new File("config/SlurpiesDongles/Armor Materials.cfg"));
-            Charms = new Configuration(new File("config/SlurpiesDongles/Charms.cfg"));
-            Config = new Configuration(new File("config/SlurpiesDongles/Tool Materials.cfg"));
-            OreAndFood = new Configuration(new File("config/SlurpiesDongles/Ore.cfg"));
-            Worldgen = new Configuration(new File("config/SlurpiesDongles/World Generation.cfg"));
+    // Directly reference a log4j logger.
+    private static final Logger LOGGER = LogManager.getLogger();
 
-            ConfigFile.SyncConfig();
+    public SlurpiesDongles() {
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Register the enqueueIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        // Register the processIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        // Register the doClientStuff method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        // Register ourselves for server, registry and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
 
-            MinecraftForge.EVENT_BUS.register(new EventPigDrops());
-            MinecraftForge.EVENT_BUS.register(new RegistrationHandler());
-            MinecraftForge.EVENT_BUS.register(new FuelHandler());
-            MinecraftForge.EVENT_BUS.register(new SmeltingRecipies());
-            SeedsDropFromGrass.getSeedDrops();
-
-
-
-        }
-
-        @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-            OreDictHandler.registerOreDict();
-            MinecraftForge.EVENT_BUS.register(instance);
-            NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
-            proxy.registerRenders();
-            SmeltingRecipies.registerSmeltingRecipes();
-            GameRegistry.registerWorldGenerator(new WorldGen(), 0);
-            GameRegistry.registerFuelHandler(new FuelHandler());
-        }
-
-        @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-
-        }
-
-    @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent event) {
 
     }
+
+    private static CompositeFeature<?, ?> getOreGenFeature(Block ore, int chance, int size, int avgHeight, int spread) {
+        return Biome.createCompositeFeature(Feature.MINABLE, new MinableConfig((blockState) -> Tags.Blocks.STONE.contains(blockState.getBlock()) || Tags.Blocks.ORES.contains(blockState.getBlock()), ore.getDefaultState(), chance), Biome.DEPTH_AVERAGE, new DepthAverageConfig(size, avgHeight, spread));
+    }
+
+    private static CompositeFeature<?, ?> getNetherOreGenFeature(Block ore, int size, int count) {
+        return Biome.createCompositeFeature(Feature.MINABLE, new MinableConfig(BlockMatcher.forBlock(Blocks.NETHERRACK), ore.getDefaultState(), size), Biome.COUNT_RANGE, new CountRangeConfig(count, 10, 20, 128));
+
+    }
+    private void setup(final FMLCommonSetupEvent event)
+    {
+        // some preinit code
+        SeedsDropFromGrass.getSeedDrops();
+        MinecraftForge.EVENT_BUS.register(new PigDrops());
+
+        //World Generation
+        //Overworld
+        CompositeFeature<?, ?> amazonite_ore = getOreGenFeature(ModBlocks.AMAZONITE_ORE, 6, 4, 1, 26);
+        CompositeFeature<?, ?> amethyst_ore = getOreGenFeature(ModBlocks.AMETHYST_ORE, 5, 3, 1, 32);
+        CompositeFeature<?, ?> peridot_ore = getOreGenFeature(ModBlocks.PERIDOT_ORE, 10, 7, 1, 48);
+        CompositeFeature<?, ?> ruby_ore = getOreGenFeature(ModBlocks.RUBY_ORE, 6, 5, 1, 32);
+        CompositeFeature<?, ?> sapphire_ore = getOreGenFeature(ModBlocks.SAPPHIRE_ORE, 10, 7, 1, 48);
+        CompositeFeature<?, ?> topaz_ore = getOreGenFeature(ModBlocks.TOPAZ_ORE, 4, 4, 1, 20);
+        //Nether
+        CompositeFeature<?, ?> nether_coal_ore = getNetherOreGenFeature(ModBlocks.NETHER_COAL_ORE, 10, 10);
+        CompositeFeature<?, ?> nether_diamond_ore = getNetherOreGenFeature(ModBlocks.NETHER_DIAMOND_ORE, 3, 4);
+        CompositeFeature<?, ?> nether_emerald_ore = getNetherOreGenFeature(ModBlocks.NETHER_EMERALD_ORE, 3, 4);
+        CompositeFeature<?, ?> nether_gold_ore = getNetherOreGenFeature(ModBlocks.NETHER_GOLD_ORE, 7, 6);
+        CompositeFeature<?, ?> nether_iron_ore = getNetherOreGenFeature(ModBlocks.NETHER_IRON_ORE, 10, 8);
+        CompositeFeature<?, ?> nether_lapis_ore = getNetherOreGenFeature(ModBlocks.NETHER_LAPIS_ORE, 5, 4);
+        CompositeFeature<?, ?> nether_redstone_ore = getNetherOreGenFeature(ModBlocks.NETHER_REDSTONE_ORE, 6, 5);
+        for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
+            //System.out.println(biome.getRegistryName());
+            if (biome == Biomes.NETHER) {
+                //Nether Gen
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_coal_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_diamond_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_emerald_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_iron_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_gold_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_lapis_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_redstone_ore);
+            } else {
+                //Overworld Gen
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, amazonite_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, amethyst_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, peridot_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ruby_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, sapphire_ore);
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, topaz_ore);
+            }
+        }
+    }
+
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        // do something that can only be done on the client
+    }
+
+    private void enqueueIMC(final InterModEnqueueEvent event)
+    {
+        // some example code to dispatch IMC to another mod
+    }
+
+    private void processIMC(final InterModProcessEvent event)
+    {
+        // some example code to receive and process InterModComms from other mods
+
+    }
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onConfigChanged (ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equals(SlurpiesDongles.modId)) {
-            ConfigFile.SyncConfig();
-        }
+    public static void onServerStarting(FMLServerStartingEvent event) {
+        // do something when the server starts
+
     }
+
 
 }

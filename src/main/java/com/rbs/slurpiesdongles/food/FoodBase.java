@@ -1,22 +1,15 @@
 package com.rbs.slurpiesdongles.food;
 
-import com.rbs.slurpiesdongles.SlurpiesDongles;
+import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.init.ModFood;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 
-/**
- * Created by Consular on 7/21/2017.
- */
 public class FoodBase extends ItemFood {
+    public FoodBase(int amount, float saturation, boolean isWolfFood, String name, Item.Properties builder) {
+        super(amount, saturation, isWolfFood, builder);
 
-    protected String name;
-
-    public FoodBase(int amount, float saturation, boolean isWolfFood, String name) {
-        super(amount, saturation, isWolfFood);
-
-        setCreativeTab(SlurpiesDongles.creativeTab);
-
-        this.name = name;
-        setUnlocalizedName(name);
-        setRegistryName(name);
+        this.setRegistryName(Reference.MODID, name);
+        ModFood.FOODS.add(this);
     }
 }
