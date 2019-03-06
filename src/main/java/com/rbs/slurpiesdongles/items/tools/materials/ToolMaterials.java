@@ -1,4 +1,4 @@
-package com.rbs.slurpiesdongles.handlers;
+package com.rbs.slurpiesdongles.items.tools.materials;
 
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.init.Blocks;
@@ -9,7 +9,7 @@ import net.minecraft.util.LazyLoadBase;
 
 import java.util.function.Supplier;
 
-public enum SDEnumToolMaterials implements IItemTier{
+public enum ToolMaterials implements IItemTier{
 
     //Battleaxe Materials
     AMAZONITE_BATTLEAXE(0, 1949, 0.0F, 5, 37, () -> {
@@ -153,7 +153,7 @@ public enum SDEnumToolMaterials implements IItemTier{
     public final int enchantability;
     public final LazyLoadBase<Ingredient> repairMaterial;
 
-    SDEnumToolMaterials(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> p_i48458_8_) {
+    ToolMaterials(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> p_i48458_8_) {
         this.harvestLevel = harvestLevel;
         this.maxUses = maxUses;
         this.efficiency = efficiency;

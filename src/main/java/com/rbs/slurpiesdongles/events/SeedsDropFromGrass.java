@@ -1,4 +1,4 @@
-package com.rbs.slurpiesdongles.handlers;
+package com.rbs.slurpiesdongles.events;
 
 import com.rbs.slurpiesdongles.init.ModFood;
 import net.minecraft.item.ItemStack;

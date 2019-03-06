@@ -1,7 +1,6 @@
-package com.rbs.slurpiesdongles.handlers;
+package com.rbs.slurpiesdongles.armor.materials;
 
 import com.rbs.slurpiesdongles.init.ModItems;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
@@ -14,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public enum SDEnumArmorMaterials implements IArmorMaterial{
+public enum ArmorMaterials implements IArmorMaterial{
 
     AMAZONITE ("amazonite_armor", 28, new int[]{5, 7, 7, 5}, 37, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
         return Ingredient.fromItems(ModItems.AMAZONITE);
@@ -56,7 +55,7 @@ public enum SDEnumArmorMaterials implements IArmorMaterial{
     private final float toughness;
     private final LazyLoadBase<Ingredient> repairMaterial;
 
-    SDEnumArmorMaterials(String nameIn, int p_i48533_4_, int[] p_i48533_5_, int p_i48533_6_, SoundEvent p_i48533_7_, float p_i48533_8_, Supplier<Ingredient> p_i48533_9_) {
+    ArmorMaterials(String nameIn, int p_i48533_4_, int[] p_i48533_5_, int p_i48533_6_, SoundEvent p_i48533_7_, float p_i48533_8_, Supplier<Ingredient> p_i48533_9_) {
         this.name = nameIn;
         this.maxDamageFactor = p_i48533_4_;
         this.damageReductionAmountArray = p_i48533_5_;

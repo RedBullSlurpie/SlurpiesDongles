@@ -1,4 +1,4 @@
-package com.rbs.slurpiesdongles.handlers;
+package com.rbs.slurpiesdongles.helpers;
 
 
 public enum HarvestLevelHelper {

@@ -1,8 +1,9 @@
 package com.rbs.slurpiesdongles;
 
-import com.rbs.slurpiesdongles.handlers.PigDrops;
-import com.rbs.slurpiesdongles.handlers.SeedsDropFromGrass;
+import com.rbs.slurpiesdongles.events.PigDrops;
+import com.rbs.slurpiesdongles.events.SeedsDropFromGrass;
 import com.rbs.slurpiesdongles.init.ModBlocks;
+import com.rbs.slurpiesdongles.update.Configuration;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockMatcher;
 import net.minecraft.init.Biomes;
@@ -31,10 +32,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.Random;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(Reference.MODID)
+@Mod(value = Reference.MODID)
 public class SlurpiesDongles {
 
     public static Random random = new Random();
+
 
 
     public static SlurpiesDongles instance;
@@ -53,7 +55,7 @@ public class SlurpiesDongles {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         // Register ourselves for server, registry and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
+        Configuration.init();
 
     }
 
