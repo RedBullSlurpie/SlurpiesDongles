@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-public class Blender extends Block {
+/*public class Blender extends Block {
     public Blender(Block.Properties builder, String name) {
         super(builder);
 
@@ -16,7 +16,7 @@ public class Blender extends Block {
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
-    /*public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
     {
         this.setDefaultFacing(worldIn, pos, state);
     }
@@ -24,7 +24,7 @@ public class Blender extends Block {
     private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
     {
         if (!worldIn.isRemote)
-        {
+        {/*
             IBlockState iblockstate = worldIn.getBlockState(pos.north());
             IBlockState iblockstate1 = worldIn.getBlockState(pos.south());
             IBlockState iblockstate2 = worldIn.getBlockState(pos.west());
@@ -236,5 +236,5 @@ public class Blender extends Block {
 
 
         return false;
-    }*/
-}
+    }
+}*/

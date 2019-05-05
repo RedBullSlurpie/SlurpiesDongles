@@ -21,7 +21,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class StrawberryCrop extends BlockCrops {
-    public static final IntegerProperty BEETROOT_AGE = BlockStateProperties.AGE_0_3;
+    public static final IntegerProperty STRAWBERRY_AGE = BlockStateProperties.AGE_0_3;
 
     private static final VoxelShape[] SHAPE = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D)};
 
@@ -36,7 +36,7 @@ public class StrawberryCrop extends BlockCrops {
 
     }
     public IntegerProperty getAgeProperty() {
-        return BEETROOT_AGE;
+        return STRAWBERRY_AGE;
     }
 
     public int getMaxAge() {
@@ -63,7 +63,7 @@ public class StrawberryCrop extends BlockCrops {
     }
 
     protected void fillStateContainer(StateContainer.Builder<Block, IBlockState> builder) {
-        builder.add(BEETROOT_AGE);
+        builder.add(STRAWBERRY_AGE);
     }
 
     public VoxelShape getShape(IBlockState state, IBlockReader worldIn, BlockPos pos) {

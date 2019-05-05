@@ -1,6 +1,6 @@
 package com.rbs.slurpiesdongles;
 
-import com.rbs.slurpiesdongles.events.PigDrops;
+import com.rbs.slurpiesdongles.events.MobDrops;
 import com.rbs.slurpiesdongles.events.SeedsDropFromGrass;
 import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.update.Configuration;
@@ -71,7 +71,7 @@ public class SlurpiesDongles {
     {
         // some preinit code
         SeedsDropFromGrass.getSeedDrops();
-        MinecraftForge.EVENT_BUS.register(new PigDrops());
+        MinecraftForge.EVENT_BUS.register(new MobDrops());
 
         //World Generation
         //Overworld

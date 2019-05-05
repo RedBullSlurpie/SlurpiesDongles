@@ -40,6 +40,10 @@ public enum ToolMaterials implements IItemTier{
         return Ingredient.fromItems(ModItems.TOPAZ);
     }),
 
+    WITHERED_BATTLEAXE(0, 0, 0.0F, 8, 17, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
+    }),
+
     //General Tool Materials
     AMAZONITE(3, 1949, 9.0F, 1, 37, () -> {
         return Ingredient.fromItems(ModItems.AMAZONITE);
@@ -61,6 +65,10 @@ public enum ToolMaterials implements IItemTier{
     }),
     TOPAZ(4, 0, 14.0F, 1, 20, () -> {
         return Ingredient.fromItems(ModItems.TOPAZ);
+    }),
+
+    WITHERED(4, 0, 16.0F, 1, 17, () -> {
+        return Ingredient.fromItems(Items.WITHER_SKELETON_SKULL, Items.NETHER_STAR);
     }),
     //Paxel Materials
 
@@ -108,6 +116,10 @@ public enum ToolMaterials implements IItemTier{
         return Ingredient.fromItems(ModItems.TOPAZ);
     }),
 
+    WITHERED_PAXEL(4, 0, 16.0F, 7, 17, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
+    }),
+
     WOODEN_PAXEL(0, 177, 2.0F, 0, 15, () -> {
         return Ingredient.fromItems(Blocks.OAK_PLANKS, Blocks.SPRUCE_PLANKS, Blocks.ACACIA_PLANKS, Blocks.BIRCH_PLANKS, Blocks.DARK_OAK_PLANKS, Blocks.JUNGLE_PLANKS);
     }),
@@ -144,6 +156,10 @@ public enum ToolMaterials implements IItemTier{
 
     TOPAZ_SWORD(0, 0, 0.0F, 6, 20, () -> {
         return Ingredient.fromItems(ModItems.TOPAZ);
+    }),
+
+    WITHERED_SWORD(0, 0, 0.0F, 7, 17, () -> {
+        return Ingredient.fromItems(Items.WITHER_SKELETON_SKULL, Items.NETHER_STAR);
     });
 
     public final int harvestLevel;

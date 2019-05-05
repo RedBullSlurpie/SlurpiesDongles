@@ -35,13 +35,13 @@ public class TopazArmor extends ItemArmor {
     }
 
 
-    @Override
+    /*@Override
     public void onArmorTick(ItemStack stack, World world, EntityPlayer player) {
         if (player.getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModArmor.TOPAZ_HELMET
                 && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ModArmor.TOPAZ_CHESTPLATE
                 && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ModArmor.TOPAZ_LEGGINGS
                 && player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != null && player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ModArmor.TOPAZ_BOOTS) {
-            player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 300, 0, false, false));
+            //player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 300, 0, false, false));
 
             if (!player.abilities.isCreativeMode) {
                 if (!player.abilities.allowFlying) {
@@ -56,14 +56,9 @@ public class TopazArmor extends ItemArmor {
             }
 
         }
-    }
+    }*/
     public EnumRarity getRarity(ItemStack stack) {
-        return stack.getCount() == 0 ? EnumRarity.EPIC : EnumRarity.EPIC;
+        return stack.getCount() == 0 ? EnumRarity.RARE : EnumRarity.RARE;
 
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TextComponentString("Wearing this set gives Absorption and Flight"));
     }
 }

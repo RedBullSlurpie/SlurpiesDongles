@@ -1,7 +1,7 @@
 package com.rbs.slurpiesdongles.init;
 
 import com.rbs.slurpiesdongles.blocks.*;
-import com.rbs.slurpiesdongles.handlers.HarvestLevelHelper;
+import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

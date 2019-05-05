@@ -1,7 +1,7 @@
 package com.rbs.slurpiesdongles.blocks;
 
 import com.rbs.slurpiesdongles.Reference;
-import com.rbs.slurpiesdongles.handlers.HarvestLevelHelper;
+import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Block;

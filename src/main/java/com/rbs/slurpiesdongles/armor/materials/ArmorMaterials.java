@@ -1,6 +1,7 @@
 package com.rbs.slurpiesdongles.armor.materials;
 
 import com.rbs.slurpiesdongles.init.ModItems;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
@@ -21,6 +22,11 @@ public enum ArmorMaterials implements IArmorMaterial{
     AMETHYST ("amethyst_armor", 23, new int[]{4, 6, 7, 4}, 31, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
         return Ingredient.fromItems(ModItems.AMETHYST);
     }),
+
+    WITHERED ("withered_armor", 0, new int[]{6, 9, 10, 5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
+    }),
+
     PERIDOT ("peridot_armor", 20, new int[]{3, 5, 6, 3}, 27, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, () -> {
         return Ingredient.fromItems(ModItems.PERIDOT);
     }),
@@ -30,7 +36,7 @@ public enum ArmorMaterials implements IArmorMaterial{
     SAPPHIRE ("sapphire_armor", 20, new int[]{3, 5, 6, 3}, 26, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, () -> {
         return Ingredient.fromItems(ModItems.SAPPHIRE);
     }),
-    TOPAZ ("topaz_armor", 0, new int[]{5, 8, 9, 4}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
+    TOPAZ ("topaz_armor", 0, new int[]{4, 7, 8, 3}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
         return Ingredient.fromItems(ModItems.TOPAZ);
     });
 
