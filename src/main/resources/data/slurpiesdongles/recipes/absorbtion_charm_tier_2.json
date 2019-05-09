@@ -7,16 +7,16 @@
   ],
   "key": {
     "X": {
-      "item": "minecraft:pufferfish"
+      "item": "minecraft:ghast_tear"
     },
     "N": {
-      "item": "minecraft:nether_star"
+      "item": "slurpiesdongles:absorbtion_charm"
     },
     "E": {
-      "item": "minecraft:leather"
+      "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "slurpiesdongles:water_breathing_charm"
+    "item": "slurpiesdongles:absorbtion_charm_tier_2"
   }
 }

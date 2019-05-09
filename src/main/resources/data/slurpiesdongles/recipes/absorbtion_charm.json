@@ -1,22 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "RRR",
-    "SNS",
-    "RSR"
+    "XXX",
+    "ENE",
+    "XEX"
   ],
   "key": {
-    "R": {
+    "X": {
       "item": "minecraft:ghast_tear"
     },
     "N": {
-      "item": "minecraft:nether_star"
+      "item": "slurpiesdongles:regen_charm"
     },
-    "S": {
+    "E": {
       "item": "minecraft:leather"
     }
   },
   "result": {
-    "item": "slurpiesdongles:regen_charm"
+    "item": "slurpiesdongles:absorbtion_charm"
   }
 }

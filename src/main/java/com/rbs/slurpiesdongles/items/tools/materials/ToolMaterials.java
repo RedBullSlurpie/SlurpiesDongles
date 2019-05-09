@@ -125,7 +125,7 @@ public enum ToolMaterials implements IItemTier{
     }),
 
     //Pickaxe Materials
-    VMPICK(1, 9100, 4.0F, 1, 10, () -> {
+    VMPICK(1, 18200, 4.0F, 1, 10, () -> {
         return Ingredient.fromItems(Items.IRON_INGOT);
     }),
 

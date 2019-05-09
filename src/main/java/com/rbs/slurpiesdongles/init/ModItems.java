@@ -15,11 +15,16 @@ public class ModItems {
     //register("water_bucket", new ItemBucket(Fluids.WATER, (new Item.Properties()).containerItem(item).maxStackSize(1).group(ItemGroup.MISC)));
 
     //Charms
+    public static Item ABSORBTION_CHARM = new AbsorbtionCharm("absorbtion_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item ABSORBTION_CHARM_TIER_2 = new AbsorbtionCharmTier2("absorbtion_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item FIRE_CHARM = new FireCharm("fire_resistance_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item NIGHT_VISION_CHARM = new NightVisionCharm("night_vision_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item REGEN_CHARM = new RegenerationCharm("regen_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item REGEN_CHARM_TIER_2 = new RegenerationCharmTier2("regen_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item SPEED_CHARM = new SpeedCharm("speed_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item SPEED_CHARM_TIER_2 = new SpeedCharmTier2("speed_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item STRENGTH_CHARM = new StrengthCharm("strength_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item STRENGTH_CHARM_TIER_2 = new StrengthCharmTier2("strength_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item WATER_BREATHING_CHARM = new WaterBreathingCharm("water_breathing_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
 
     //Dusts

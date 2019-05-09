@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "XXX",
-    "CNC",
-    "XXX"
+    "RRR",
+    "SNS",
+    "RSR"
   ],
   "key": {
-    "X": {
-    "item": "minecraft:lava_bucket"
+    "R": {
+      "item": "minecraft:magma_cream"
     },
-    "C": {
-    "item": "minecraft:magma_cream"
-     },
-     "N": {
-    "item": "minecraft:nether_star"
-}
+    "N": {
+      "item": "minecraft:nether_star"
+    },
+    "S": {
+      "item": "minecraft:leather"
+    }
   },
   "result": {
     "item": "slurpiesdongles:fire_resistance_charm"

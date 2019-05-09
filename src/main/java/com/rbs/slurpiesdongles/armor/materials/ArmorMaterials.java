@@ -23,10 +23,6 @@ public enum ArmorMaterials implements IArmorMaterial{
         return Ingredient.fromItems(ModItems.AMETHYST);
     }),
 
-    WITHERED ("withered_armor", 0, new int[]{6, 9, 10, 5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
-        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
-    }),
-
     PERIDOT ("peridot_armor", 20, new int[]{3, 5, 6, 3}, 27, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, () -> {
         return Ingredient.fromItems(ModItems.PERIDOT);
     }),
@@ -38,6 +34,10 @@ public enum ArmorMaterials implements IArmorMaterial{
     }),
     TOPAZ ("topaz_armor", 0, new int[]{4, 7, 8, 3}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
         return Ingredient.fromItems(ModItems.TOPAZ);
+    }),
+
+    WITHERED ("withered_armor", 0, new int[]{6, 9, 10, 5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
     });
 
 

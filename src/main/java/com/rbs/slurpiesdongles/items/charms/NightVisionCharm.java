@@ -3,6 +3,7 @@ package com.rbs.slurpiesdongles.items.charms;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.ITextComponent;
@@ -32,5 +33,10 @@ public class NightVisionCharm extends CharmBase {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new TextComponentString("Having this item in your inventory grants you Night Vision"));
+    }
+
+    public EnumRarity getRarity(ItemStack stack) {
+        return stack.getCount() == 0 ? EnumRarity.RARE : EnumRarity.RARE;
+
     }
 }

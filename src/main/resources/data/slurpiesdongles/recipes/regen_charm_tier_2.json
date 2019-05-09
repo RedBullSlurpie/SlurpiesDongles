@@ -7,16 +7,16 @@
   ],
   "key": {
     "R": {
-      "item": "minecraft:blaze_powder"
+      "item": "minecraft:ghast_tear"
     },
     "N": {
-      "item": "minecraft:nether_star"
+      "item": "slurpiesdongles:regen_charm"
     },
     "S": {
-      "item": "minecraft:leather"
+      "item": "minecraft:nether_star"
     }
   },
   "result": {
-    "item": "slurpiesdongles:strength_charm"
+    "item": "slurpiesdongles:regen_charm_tier_2"
   }
 }

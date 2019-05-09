@@ -1,6 +1,7 @@
 package com.rbs.slurpiesdongles.init;
 
 import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import com.rbs.slurpiesdongles.items.tools.materials.ToolMaterials;
 import com.rbs.slurpiesdongles.items.tools.*;
 import net.minecraft.item.EnumRarity;
@@ -15,14 +16,14 @@ public class ModTools {
     public static final List<Item> TOOLS = new ArrayList<Item>();
 
     //Axes
-    public static Item AMAZONITE_AXE = new CustomAxe("amazonite_axe", ToolMaterials.AMAZONITE, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_AXE = new CustomAxe("amethyst_axe", ToolMaterials.AMETHYST, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item EMERALD_AXE = new CustomAxe("emerald_axe", ToolMaterials.EMERALD, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_AXE = new CustomAxe("peridot_axe", ToolMaterials.PERIDOT, 3, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_AXE = new CustomAxe("ruby_axe", ToolMaterials.RUBY, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_AXE = new CustomAxe("sapphire_axe", ToolMaterials.SAPPHIRE, 3, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_AXE = new CustomAxe("topaz_axe", ToolMaterials.TOPAZ, 7, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE));
-    public static Item WITHERED_AXE = new CustomAxe("withered_axe", ToolMaterials.WITHERED, 8, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC));
+    public static Item AMAZONITE_AXE = new CustomAxe("amazonite_axe", ToolMaterials.AMAZONITE, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMAZONITE);
+    public static Item AMETHYST_AXE = new CustomAxe("amethyst_axe", ToolMaterials.AMETHYST, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMETHYST);
+    public static Item EMERALD_AXE = new CustomAxe("emerald_axe", ToolMaterials.EMERALD, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.DIAMOND);
+    public static Item PERIDOT_AXE = new CustomAxe("peridot_axe", ToolMaterials.PERIDOT, 3, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.PERIDOT);
+    public static Item RUBY_AXE = new CustomAxe("ruby_axe", ToolMaterials.RUBY, 4, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.RUBY);
+    public static Item SAPPHIRE_AXE = new CustomAxe("sapphire_axe", ToolMaterials.SAPPHIRE, 3, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.SAPPHIRE);
+    public static Item TOPAZ_AXE = new CustomAxe("topaz_axe", ToolMaterials.TOPAZ, 7, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE), HarvestLevelHelper.TOPAZ);
+    public static Item WITHERED_AXE = new CustomAxe("withered_axe", ToolMaterials.WITHERED, 8, -3.1F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC), HarvestLevelHelper.TOPAZ);
 
     //Battleaxes
     public static Item AMAZONITE_BATTLEAXE = new CustomSword("amazonite_battleaxe", ToolMaterials.AMAZONITE_BATTLEAXE, 5, -3.0F, new Item.Properties().group(Reference.tabSlurpiesDongles));
@@ -50,40 +51,40 @@ public class ModTools {
     public static Item WITHERED_HOE = new CustomHoe("withered_hoe", ToolMaterials.WITHERED, 1, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC));
 
     //Paxels
-    public static Item AMAZONITE_PAXEL = new Paxel("amazonite_paxel", ToolMaterials.AMAZONITE_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_PAXEL = new Paxel("amethyst_paxel", ToolMaterials.AMETHYST_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item DIAMOND_PAXEL = new Paxel("diamond_paxel", ToolMaterials.DIAMOND_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item EMERALD_PAXEL = new Paxel("emerald_paxel", ToolMaterials.EMERALD_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item GOLD_PAXEL = new Paxel("gold_paxel", ToolMaterials.GOLD_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item IRON_PAXEL = new Paxel("iron_paxel", ToolMaterials.IRON_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item STONE_PAXEL = new Paxel("stone_paxel", ToolMaterials.STONE_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_PAXEL = new Paxel("peridot_paxel", ToolMaterials.PERIDOT_PAXEL, 2, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_PAXEL = new Paxel("ruby_paxel", ToolMaterials.RUBY_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_PAXEL = new Paxel("sapphire_paxel", ToolMaterials.SAPPHIRE_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_PAXEL = new Paxel("topaz_paxel", ToolMaterials.TOPAZ_PAXEL, 6, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE));
-    public static Item WITHERED_PAXEL = new Paxel("withered_paxel", ToolMaterials.WITHERED_PAXEL, 7, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC));
-    public static Item WOODEN_PAXEL = new Paxel("wooden_paxel", ToolMaterials.WOODEN_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item AMAZONITE_PAXEL = new Paxel("amazonite_paxel", ToolMaterials.AMAZONITE_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMAZONITE);
+    public static Item AMETHYST_PAXEL = new Paxel("amethyst_paxel", ToolMaterials.AMETHYST_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMETHYST);
+    public static Item DIAMOND_PAXEL = new Paxel("diamond_paxel", ToolMaterials.DIAMOND_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.DIAMOND);
+    public static Item EMERALD_PAXEL = new Paxel("emerald_paxel", ToolMaterials.EMERALD_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.DIAMOND);
+    public static Item GOLD_PAXEL = new Paxel("gold_paxel", ToolMaterials.GOLD_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.GOLD);
+    public static Item IRON_PAXEL = new Paxel("iron_paxel", ToolMaterials.IRON_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.IRON);
+    public static Item STONE_PAXEL = new Paxel("stone_paxel", ToolMaterials.STONE_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.STONE);
+    public static Item PERIDOT_PAXEL = new Paxel("peridot_paxel", ToolMaterials.PERIDOT_PAXEL, 2, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.PERIDOT);
+    public static Item RUBY_PAXEL = new Paxel("ruby_paxel", ToolMaterials.RUBY_PAXEL, 4, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.RUBY);
+    public static Item SAPPHIRE_PAXEL = new Paxel("sapphire_paxel", ToolMaterials.SAPPHIRE_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.SAPPHIRE);
+    public static Item TOPAZ_PAXEL = new Paxel("topaz_paxel", ToolMaterials.TOPAZ_PAXEL, 6, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE), HarvestLevelHelper.TOPAZ);
+    public static Item WITHERED_PAXEL = new Paxel("withered_paxel", ToolMaterials.WITHERED_PAXEL, 7, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC), HarvestLevelHelper.TOPAZ);
+    public static Item WOODEN_PAXEL = new Paxel("wooden_paxel", ToolMaterials.WOODEN_PAXEL, 3, -3.0F,  new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.WOOD);
 
     //Pickaxes
-    public static Item AMAZONITE_PICKAXE = new CustomPickaxe("amazonite_pickaxe", ToolMaterials.AMAZONITE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_PICKAXE = new CustomPickaxe("amethyst_pickaxe", ToolMaterials.AMETHYST, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item EMERALD_PICKAXE = new CustomPickaxe("emerald_pickaxe", ToolMaterials.EMERALD, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_PICKAXE = new CustomPickaxe("peridot_pickaxe", ToolMaterials.PERIDOT, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_PICKAXE = new CustomPickaxe("ruby_pickaxe", ToolMaterials.RUBY, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_PICKAXE = new CustomPickaxe("sapphire_pickaxe", ToolMaterials.SAPPHIRE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_PICKAXE = new CustomPickaxe("topaz_pickaxe", ToolMaterials.TOPAZ, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE));
-    public static Item WITHERED_PICKAXE = new CustomPickaxe("withered_pickaxe", ToolMaterials.WITHERED, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC));
-    public static Item VM_PICKAXE = new VMPick("vmpick", ToolMaterials.VMPICK, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item AMAZONITE_PICKAXE = new CustomPickaxe("amazonite_pickaxe", ToolMaterials.AMAZONITE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMAZONITE);
+    public static Item AMETHYST_PICKAXE = new CustomPickaxe("amethyst_pickaxe", ToolMaterials.AMETHYST, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMETHYST);
+    public static Item EMERALD_PICKAXE = new CustomPickaxe("emerald_pickaxe", ToolMaterials.EMERALD, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.DIAMOND);
+    public static Item PERIDOT_PICKAXE = new CustomPickaxe("peridot_pickaxe", ToolMaterials.PERIDOT, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.PERIDOT);
+    public static Item RUBY_PICKAXE = new CustomPickaxe("ruby_pickaxe", ToolMaterials.RUBY, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.RUBY);
+    public static Item SAPPHIRE_PICKAXE = new CustomPickaxe("sapphire_pickaxe", ToolMaterials.SAPPHIRE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.SAPPHIRE);
+    public static Item TOPAZ_PICKAXE = new CustomPickaxe("topaz_pickaxe", ToolMaterials.TOPAZ, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE), HarvestLevelHelper.TOPAZ);
+    public static Item WITHERED_PICKAXE = new CustomPickaxe("withered_pickaxe", ToolMaterials.WITHERED, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC), HarvestLevelHelper.TOPAZ);
+    public static Item VM_PICKAXE = new VMPick("vmpick", ToolMaterials.VMPICK, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.STONE);
 
     //Shovels
-    public static Item AMAZONITE_SHOVEL = new CustomShovel("amazonite_shovel", ToolMaterials.AMAZONITE, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_SHOVEL = new CustomShovel("amethyst_shovel", ToolMaterials.AMETHYST, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item EMERALD_SHOVEL = new CustomShovel("emerald_shovel", ToolMaterials.EMERALD, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_SHOVEL = new CustomShovel("peridot_shovel", ToolMaterials.PERIDOT, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_SHOVEL = new CustomShovel("ruby_shovel", ToolMaterials.RUBY, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_SHOVEL = new CustomShovel("sapphire_shovel", ToolMaterials.SAPPHIRE, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_SHOVEL = new CustomShovel("topaz_shovel", ToolMaterials.TOPAZ, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE));
-    public static Item WITHERED_SHOVEL = new CustomShovel("withered_shovel", ToolMaterials.WITHERED, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC));
+    public static Item AMAZONITE_SHOVEL = new CustomShovel("amazonite_shovel", ToolMaterials.AMAZONITE, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMAZONITE);
+    public static Item AMETHYST_SHOVEL = new CustomShovel("amethyst_shovel", ToolMaterials.AMETHYST, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.AMETHYST);
+    public static Item EMERALD_SHOVEL = new CustomShovel("emerald_shovel", ToolMaterials.EMERALD, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.DIAMOND);
+    public static Item PERIDOT_SHOVEL = new CustomShovel("peridot_shovel", ToolMaterials.PERIDOT, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.PERIDOT);
+    public static Item RUBY_SHOVEL = new CustomShovel("ruby_shovel", ToolMaterials.RUBY, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.RUBY);
+    public static Item SAPPHIRE_SHOVEL = new CustomShovel("sapphire_shovel", ToolMaterials.SAPPHIRE, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.SAPPHIRE);
+    public static Item TOPAZ_SHOVEL = new CustomShovel("topaz_shovel", ToolMaterials.TOPAZ, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.RARE), HarvestLevelHelper.TOPAZ);
+    public static Item WITHERED_SHOVEL = new CustomShovel("withered_shovel", ToolMaterials.WITHERED, 1, -2.6F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(EnumRarity.EPIC), HarvestLevelHelper.TOPAZ);
 
     //Swords
     public static Item AMAZONITE_SWORD = new CustomSword("amazonite_sword", ToolMaterials.AMAZONITE_SWORD, 4, -2.4F, new Item.Properties().group(Reference.tabSlurpiesDongles));

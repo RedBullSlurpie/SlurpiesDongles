@@ -3,17 +3,17 @@
   "pattern": [
     "RRR",
     "SNS",
-    "RRR"
+    "RSR"
   ],
   "key": {
     "R": {
-    "item": "minecraft:redstone_block"
+    "item": "minecraft:sugar"
     },
     "N": {
     "item": "minecraft:nether_star"
     },
     "S": {
-    "item": "minecraft:sugar"
+    "item": "minecraft:leather"
     }
   },
   "result": {

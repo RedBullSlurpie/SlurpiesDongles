@@ -41,7 +41,6 @@ public class WitheredArmor extends ItemArmor {
                 && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ModArmor.WITHERED_CHESTPLATE
                 && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ModArmor.WITHERED_LEGGINGS
                 && player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != null && player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ModArmor.WITHERED_BOOTS) {
-            //player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 300, 0, false, false));
 
             if (!player.abilities.isCreativeMode) {
                 if (!player.abilities.allowFlying) {

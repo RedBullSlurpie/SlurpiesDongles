@@ -9,7 +9,7 @@ public enum HarvestLevelHelper {
     PERIDOT("peridot", 2),
     RUBY("ruby", 2),
     SAPPHIRE("sapphire", 2),
-    TOPAZ("topaz", 3),
+    TOPAZ("topaz", 4),
     //Vanilla
     DIAMOND("wood", 3),
     GOLD("wood", 0),

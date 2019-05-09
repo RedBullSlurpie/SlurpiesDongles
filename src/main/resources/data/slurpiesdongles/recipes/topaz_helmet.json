@@ -2,18 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "XXX",
-    "XNX"
+    "X X"
   ],
   "key": {
     "X": {
-    "item": "slurpiesdongles:hardened_topaz"
+      "item": "slurpiesdongles:hardened_topaz"
+    }
     },
-      "N": {
-          "item": "minecraft:nether_star"
-      }
-      
-  },
-  "result": {
-    "item": "slurpiesdongles:topaz_helmet"
+    "result": {
+      "item": "slurpiesdongles:topaz_helmet"
+    }
   }
-}

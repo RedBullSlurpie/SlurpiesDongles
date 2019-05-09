@@ -3,6 +3,7 @@ package com.rbs.slurpiesdongles.items.charms;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -33,5 +34,10 @@ public class FireCharm extends CharmBase {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new TextComponentString("Having this item in your inventory grants you Fire Resistance"));
+    }
+
+    public EnumRarity getRarity(ItemStack stack) {
+        return stack.getCount() == 0 ? EnumRarity.RARE : EnumRarity.RARE;
+
     }
 }
