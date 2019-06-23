@@ -4,9 +4,9 @@ import com.rbs.slurpiesdongles.Reference;
 import com.rbs.slurpiesdongles.init.ModTools;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSword;
+import net.minecraft.item.SwordItem;
 
-public class CustomSword extends ItemSword {
+public class CustomSword extends SwordItem {
     public CustomSword(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder) {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 

@@ -15,8 +15,8 @@ public class ModItems {
     //register("water_bucket", new ItemBucket(Fluids.WATER, (new Item.Properties()).containerItem(item).maxStackSize(1).group(ItemGroup.MISC)));
 
     //Charms
-    public static Item ABSORBTION_CHARM = new AbsorbtionCharm("absorbtion_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item ABSORBTION_CHARM_TIER_2 = new AbsorbtionCharmTier2("absorbtion_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item ABSORPTION_CHARM = new AbsorptionCharm("absorption_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item ABSORPTION_CHARM_TIER_2 = new AbsorptionCharmTier2("absorption_charm_tier_2", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item FIRE_CHARM = new FireCharm("fire_resistance_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item NIGHT_VISION_CHARM = new NightVisionCharm("night_vision_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item REGEN_CHARM = new RegenerationCharm("regen_charm", new Item.Properties().group(Reference.tabSlurpiesDongles));

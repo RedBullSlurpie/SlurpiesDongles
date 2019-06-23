@@ -1,13 +1,13 @@
 package com.rbs.slurpiesdongles.items.charms;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.item.EnumRarity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.item.Rarity;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -21,23 +21,23 @@ public class SpeedCharmTier2 extends CharmBase {
     }
 
     @Override
-    public void onTick(ItemStack stack, EntityPlayer living) {
+    public void onTick(ItemStack stack, PlayerEntity living) {
 
     }
 
     @Override
-    public boolean onTick(ItemStack stack, EntityPlayer living, World world) {
+    public boolean onTick(ItemStack stack, PlayerEntity living, World world) {
         if (!this.canTick(stack)) {
-            living.addPotionEffect(new PotionEffect(MobEffects.SPEED, 600, 1, false, false));
+            living.addPotionEffect(new EffectInstance(Effects.SPEED, 600, 1, false, false));
         }
         return false;
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TextComponentString("Having this item in your inventory grants you Speed Tier 2"));
+        tooltip.add(new StringTextComponent( "Having this item in your inventory grants you Speed Tier 2"));
     }
-    public EnumRarity getRarity(ItemStack stack) {
-        return stack.getCount() == 0 ? EnumRarity.EPIC : EnumRarity.EPIC;
+    public Rarity getRarity(ItemStack stack) {
+        return stack.getCount() == 0 ? Rarity.EPIC : Rarity.EPIC;
 
     }
     @OnlyIn(Dist.CLIENT)

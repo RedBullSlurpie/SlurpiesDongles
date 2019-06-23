@@ -5,11 +5,11 @@ import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.init.ModFood;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockCrops;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CropsBlock;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
@@ -19,12 +19,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReaderBase;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Random;
 
-public class CornCrop extends BlockCrops {
+public class CornCrop extends CropsBlock {
     public static final IntegerProperty CORN_AGE = BlockStateProperties.AGE_0_7;
 
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
@@ -37,14 +39,14 @@ public class CornCrop extends BlockCrops {
         this.setRegistryName(Reference.MODID, name);
 
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
+        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
 
     }
-    public VoxelShape getShape(IBlockState state, IBlockReader worldIn, BlockPos pos) {
+    public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return SHAPE_BY_AGE[state.get(this.getAgeProperty())];
     }
 
-    protected boolean isValidGround(IBlockState state, IBlockReader worldIn, BlockPos pos) {
+    protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return state.getBlock() == Blocks.FARMLAND;
     }
 
@@ -56,19 +58,19 @@ public class CornCrop extends BlockCrops {
         return 7;
     }
 
-    protected int getAge(IBlockState state) {
+    protected int getAge(BlockState state) {
         return state.get(this.getAgeProperty());
     }
 
-    public IBlockState withAge(int age) {
+    public BlockState withAge(int age) {
         return this.getDefaultState().with(this.getAgeProperty(), Integer.valueOf(age));
     }
 
-    public boolean isMaxAge(IBlockState state) {
+    public boolean isMaxAge(BlockState state) {
         return state.get(this.getAgeProperty()) >= this.getMaxAge();
     }
 
-    public void tick(IBlockState state, World worldIn, BlockPos pos, Random random) {
+    public void tick(BlockState state, World worldIn, BlockPos pos, Random random) {
         super.tick(state, worldIn, pos, random);
         if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (worldIn.getLightSubtracted(pos.up(), 0) >= 9) {
@@ -84,7 +86,7 @@ public class CornCrop extends BlockCrops {
 
     }
 
-    public void grow(World worldIn, BlockPos pos, IBlockState state) {
+    public void grow(World worldIn, BlockPos pos, BlockState state) {
         int i = this.getAge(state) + this.getBonemealAgeIncrease(worldIn);
         int j = this.getMaxAge();
         if (i > j) {
@@ -105,8 +107,8 @@ public class CornCrop extends BlockCrops {
         for(int i = -1; i <= 1; ++i) {
             for(int j = -1; j <= 1; ++j) {
                 float f1 = 0.0F;
-                IBlockState iblockstate = worldIn.getBlockState(blockpos.add(i, 0, j));
-                if (iblockstate.canSustainPlant(worldIn, blockpos.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn)) {
+                BlockState iblockstate = worldIn.getBlockState(blockpos.add(i, 0, j));
+                if (iblockstate.canSustainPlant(worldIn, blockpos.add(i, 0, j), net.minecraft.util.Direction.UP, (net.minecraftforge.common.IPlantable)blockIn)) {
                     f1 = 1.0F;
                     if (iblockstate.isFertile(worldIn, blockpos.add(i, 0, j))) {
                         f1 = 3.0F;
@@ -139,64 +141,34 @@ public class CornCrop extends BlockCrops {
         return f;
     }
 
-    public boolean isValidPosition(IBlockState state, IWorldReaderBase worldIn, BlockPos pos) {
-        return (worldIn.getLightSubtracted(pos, 0) >= 8 || worldIn.canSeeSky(pos)) && super.isValidPosition(state, worldIn, pos);
+    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+        return (worldIn.getLightSubtracted(pos, 0) >= 8 || worldIn.canBlockSeeSky(pos)) && super.isValidPosition(state, worldIn, pos);
     }
-
+    @OnlyIn(Dist.CLIENT)
     protected IItemProvider getSeedsItem() {
         return ModFood.CORN_SEED;
     }
 
-    protected IItemProvider getCropsItem() {
-        return ModFood.RAW_CORN;
-    }
-
-    public void dropBlockAsItemWithChance(IBlockState state, World worldIn, BlockPos pos, float chancePerItem, int fortune) {
-        super.dropBlockAsItemWithChance(state, worldIn, pos, chancePerItem, fortune);
-    }
-
-    @Override
-    public void getDrops(IBlockState state, net.minecraft.util.NonNullList<ItemStack> drops, World world, BlockPos pos, int fortune) {
-        super.getDrops(state, drops, world, pos, 0);
-        {
-            int i = this.getAge(state);
-            if (i >= this.getMaxAge()) {
-                int j = 3 + fortune;
-
-                for(int k = 0; k < j; ++k) {
-                    if (world.rand.nextInt(2 * this.getMaxAge()) <= i) {
-                        drops.add(new ItemStack(this.getSeedsItem()));
-                    }
-                }
-            }
-
-        }
-    }
-
-    public IItemProvider getItemDropped(IBlockState state, World worldIn, BlockPos pos, int fortune) {
-        return this.isMaxAge(state) ? this.getCropsItem() : this.getSeedsItem();
-    }
-
-    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, IBlockState state) {
+    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
         return new ItemStack(this.getSeedsItem());
     }
 
     /**
      * Whether this IGrowable can grow
      */
-    public boolean canGrow(IBlockReader worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+    public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
         return !this.isMaxAge(state);
     }
 
-    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
         return true;
     }
 
-    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+    public void grow(World worldIn, Random rand, BlockPos pos, BlockState state) {
         this.grow(worldIn, pos, state);
     }
 
-    protected void fillStateContainer(StateContainer.Builder<Block, IBlockState> builder) {
+    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         builder.add(AGE);
     }
 }

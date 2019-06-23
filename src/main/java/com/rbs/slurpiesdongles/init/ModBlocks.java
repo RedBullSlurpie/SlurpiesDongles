@@ -38,13 +38,13 @@ public class ModBlocks {
     public static Block TOPAZ = new BlockBase("topaz_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.TOPAZ);
 
 
-    //Bushes & Crops
-    public static CabbageCrop CABBAGE_CROP = new CabbageCrop("cabbage_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
-    public static CornCrop CORN_CROP = new CornCrop("corn_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
-    public static LemonCrop LEMON_CROP = new LemonCrop("lemon_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
-    public static OrangeCrop ORANGE_CROP = new OrangeCrop("orange_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
-    public static StrawberryCrop STRAWBERRY_CROP = new StrawberryCrop("strawberry_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
-    public static TomatoCrop TOMATO_CROP = new TomatoCrop("tomato_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().needsRandomTick().sound(SoundType.PLANT));
+    //Crops
+    public static CabbageCrop CABBAGE_CROP = new CabbageCrop("cabbage_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
+    public static CornCrop CORN_CROP = new CornCrop("corn_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
+    public static LemonCrop LEMON_CROP = new LemonCrop("lemon_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
+    public static OrangeCrop ORANGE_CROP = new OrangeCrop("orange_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
+    public static StrawberryCrop STRAWBERRY_CROP = new StrawberryCrop("strawberry_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
+    public static TomatoCrop TOMATO_CROP = new TomatoCrop("tomato_crop", Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F));
 
     //Ores
     public static Block AMAZONITE_ORE = new AmazoniteOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "amazonite_ore", HarvestLevelHelper.AMAZONITE);

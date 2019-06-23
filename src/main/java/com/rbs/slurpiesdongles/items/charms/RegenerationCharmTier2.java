@@ -1,11 +1,11 @@
 package com.rbs.slurpiesdongles.items.charms;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumRarity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Rarity;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -19,14 +19,14 @@ public class RegenerationCharmTier2 extends CharmBase {
     }
 
     @Override
-    public void onTick(ItemStack stack, EntityPlayer living) {
+    public void onTick(ItemStack stack, PlayerEntity living) {
 
     }
 
     @Override
-    public boolean onTick(ItemStack stack, EntityPlayer living, World world) {
-        if (living instanceof EntityPlayer) {
-            if (world.getGameTime() % 40 == 0 && ((EntityPlayer) living).getHealth() < ((EntityPlayer) living).getMaxHealth())//% number is how often the charm heals, 20 = 1 second
+    public boolean onTick(ItemStack stack, PlayerEntity living, World world) {
+        if (living instanceof PlayerEntity) {
+            if (world.getGameTime() % 40 == 0 && ((PlayerEntity) living).getHealth() < ((PlayerEntity) living).getMaxHealth())//% number is how often the charm heals, 20 = 1 second
 
                 if (!this.canTick(stack)) {
                     living.heal(1.0F);
@@ -36,10 +36,10 @@ public class RegenerationCharmTier2 extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TextComponentString("Having this item in your inventory grants you Health Regeneration at a faster rate than the tier 1 charm"));
+        tooltip.add(new StringTextComponent( "Having this item in your inventory grants you Health Regeneration at a faster rate than the tier 1 charm"));
     }
-    public EnumRarity getRarity(ItemStack stack) {
-        return stack.getCount() == 0 ? EnumRarity.EPIC : EnumRarity.EPIC;
+    public Rarity getRarity(ItemStack stack) {
+        return stack.getCount() == 0 ? Rarity.EPIC : Rarity.EPIC;
 
     }
     @OnlyIn(Dist.CLIENT)

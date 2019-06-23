@@ -1,22 +1,28 @@
 package com.rbs.slurpiesdongles;
 
-import com.rbs.slurpiesdongles.events.MobDrops;
-import com.rbs.slurpiesdongles.events.SeedsDropFromGrass;
+import com.rbs.slurpiesdongles.events.GrassDrops;
+import com.rbs.slurpiesdongles.events.PigDrops;
 import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.update.Configuration;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.pattern.BlockMatcher;
-import net.minecraft.init.Biomes;
-import net.minecraft.init.Blocks;
+import net.minecraft.block.BlockState;
+import net.minecraft.data.loot.EntityLootTables;
+import net.minecraft.entity.passive.PigEntity;
+import net.minecraft.item.Items;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.CompositeFeature;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.MinableConfig;
+import net.minecraft.world.gen.feature.OreFeature;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
-import net.minecraft.world.gen.placement.DepthAverageConfig;
+import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.storage.loot.*;
+import net.minecraft.world.storage.loot.conditions.LootConditionManager;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.Tags;
+import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -25,18 +31,17 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
+import java.util.function.Predicate;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(value = Reference.MODID)
 public class SlurpiesDongles {
 
     public static Random random = new Random();
-
 
 
     public static SlurpiesDongles instance;
@@ -57,14 +62,27 @@ public class SlurpiesDongles {
         MinecraftForge.EVENT_BUS.register(this);
         Configuration.init();
 
+
     }
 
-    private static CompositeFeature<?, ?> getOreGenFeature(Block ore, int chance, int size, int avgHeight, int spread) {
-        return Biome.createCompositeFeature(Feature.MINABLE, new MinableConfig((blockState) -> Tags.Blocks.STONE.contains(blockState.getBlock()) || Tags.Blocks.ORES.contains(blockState.getBlock()), ore.getDefaultState(), chance), Biome.DEPTH_AVERAGE, new DepthAverageConfig(size, avgHeight, spread));
+    private void setup(final FMLCommonSetupEvent event) {
+        // some preinit code
+        MinecraftForge.EVENT_BUS.register(new PigDrops());
+        OreGenerator.setupOreGen();
+        MinecraftForge.EVENT_BUS.register(new GrassDrops());
+
+
+
+
+
+
+/*
+    private static OreFeatureConfig getOreGenFeature(Block ore, int chance, int size, int avgHeight, int spread) {
+        return Biome.Builder(Feature.ORE, new OreFeatureConfig((blockState) -> Tags.Blocks.STONE.contains(blockState.getBlock()) || Tags.Blocks.ORES.contains(blockState.getBlock()), ore.getDefaultState(), chance), Biome.DEPTH_AVERAGE, new DepthAverageConfig(size, avgHeight, spread));
     }
 
-    private static CompositeFeature<?, ?> getNetherOreGenFeature(Block ore, int size, int count) {
-        return Biome.createCompositeFeature(Feature.MINABLE, new MinableConfig(BlockMatcher.forBlock(Blocks.NETHERRACK), ore.getDefaultState(), size), Biome.COUNT_RANGE, new CountRangeConfig(count, 10, 20, 128));
+    private static OreFeatureConfig getNetherOreGenFeature(Block ore, int size, int count) {
+        return Biome.Builder(Feature.ORE, new OreFeatureConfig(BlockMatcher.forBlock(Blocks.NETHERRACK), ore.getDefaultState(), size), Biome.COUNT_RANGE, new CountRangeConfig(count, 10, 20, 128));
 
     }
     private void setup(final FMLCommonSetupEvent event)
@@ -75,8 +93,8 @@ public class SlurpiesDongles {
 
         //World Generation
         //Overworld
-        CompositeFeature<?, ?> amazonite_ore = getOreGenFeature(ModBlocks.AMAZONITE_ORE, 6, 4, 1, 26);
-        CompositeFeature<?, ?> amethyst_ore = getOreGenFeature(ModBlocks.AMETHYST_ORE, 5, 3, 1, 32);
+        OreFeatureConfig amazonite_ore = getOreGenFeature(ModBlocks.AMAZONITE_ORE, 6, 4, 1, 26);
+        OreFeatureConfig amethyst_ore = getOreGenFeature(ModBlocks.AMETHYST_ORE, 5, 3, 1, 32);
         CompositeFeature<?, ?> peridot_ore = getOreGenFeature(ModBlocks.PERIDOT_ORE, 10, 7, 1, 48);
         CompositeFeature<?, ?> ruby_ore = getOreGenFeature(ModBlocks.RUBY_ORE, 6, 5, 1, 32);
         CompositeFeature<?, ?> sapphire_ore = getOreGenFeature(ModBlocks.SAPPHIRE_ORE, 10, 7, 1, 48);
@@ -110,28 +128,31 @@ public class SlurpiesDongles {
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, topaz_ore);
             }
         }
-    }
-
-    private void doClientStuff(final FMLClientSetupEvent event) {
-        // do something that can only be done on the client
-    }
-
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
-        // some example code to dispatch IMC to another mod
-    }
-
-    private void processIMC(final InterModProcessEvent event)
-    {
-        // some example code to receive and process InterModComms from other mods
-
-    }
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public static void onServerStarting(FMLServerStartingEvent event) {
-        // do something when the server starts
+    }*/
 
     }
 
+    private void doClientStuff ( final FMLClientSetupEvent event){
+            // do something that can only be done on the client
+        }
 
-}
+        private void enqueueIMC ( final InterModEnqueueEvent event)
+        {
+            // some example code to dispatch IMC to another mod
+        }
+
+        private void processIMC ( final InterModProcessEvent event)
+        {
+            // some example code to receive and process InterModComms from other mods
+
+        }
+        // You can use SubscribeEvent and let the Event Bus discover methods to call
+        @SubscribeEvent
+        public static void onServerStarting (FMLServerStartingEvent event){
+            // do something when the server starts
+
+        }
+
+    }
+
+

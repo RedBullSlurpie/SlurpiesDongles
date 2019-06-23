@@ -1,9 +1,9 @@
 package com.rbs.slurpiesdongles.items.tools.materials;
 
 import com.rbs.slurpiesdongles.init.ModItems;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyLoadBase;
 

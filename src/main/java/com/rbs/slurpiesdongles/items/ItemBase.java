@@ -2,7 +2,6 @@ package com.rbs.slurpiesdongles.items;
 
 import com.rbs.slurpiesdongles.Reference;
 import com.rbs.slurpiesdongles.init.ModItems;
-import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 

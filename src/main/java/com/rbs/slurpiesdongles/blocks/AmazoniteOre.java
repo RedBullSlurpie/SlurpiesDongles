@@ -5,9 +5,10 @@ import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.item.ExperienceOrbEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -27,57 +28,49 @@ public class AmazoniteOre extends Block {
 
         this.resource = resource;
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
+        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
 
     @Override
-    public ToolType getHarvestTool(IBlockState state) {
+    public ToolType getHarvestTool(BlockState state) {
         return ToolType.PICKAXE;
     }
 
     @Override
-    public int getHarvestLevel(IBlockState state) {
+    public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(IBlockState state, World worldIn, BlockPos pos, int fortune) {
+    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
         if (this == ModBlocks.AMAZONITE_ORE) {
             return ModItems.AMAZONITE;
         }
         return this;
     }
 
-    public int getItemsToDropCount(IBlockState state, int fortune, World worldIn, BlockPos pos, Random random) {
+    /*public int getItemsToDropCount(BlockState state, int fortune, World worldIn, BlockPos pos, Random random) {
         if (fortune > 0 && this != this.getItemDropped(this.getStateContainer().getValidStates().iterator().next(), worldIn, pos, fortune)) {
             int i = random.nextInt(fortune + 2) - 1;
             if (i < 0) {
                 i = 0;
             }
 
-            return this.quantityDropped(state, random) * (i + 1);
+            return this. (state, random) * (i + 1);
         } else {
             return this.quantityDropped(state, random);
         }
     }
-
-    public void dropBlockAsItemWithChance(IBlockState state, World worldIn, BlockPos pos, float chancePerItem, int fortune) {
-        super.dropBlockAsItemWithChance(state, worldIn, pos, chancePerItem, fortune);
-    }
-
-    @Override
-    public int getExpDrop(IBlockState state, net.minecraft.world.IWorldReader reader, BlockPos pos, int fortune) {
-        World world = reader instanceof World ? (World) reader : null;
-        if (world == null || this.getItemDropped(state, world, pos, fortune) != this) {
-            int i = 0;
-            if (this == ModBlocks.AMAZONITE_ORE) {
-                i = MathHelper.nextInt(RANDOM, 3, 7);
-
-                return i;
+    */
+@Override
+    public void dropXpOnBlockBreak(World worldIn, BlockPos pos, int amount) {
+        if (!worldIn.isRemote && worldIn.getGameRules().getBoolean("doTileDrops") && !worldIn.restoringBlockSnapshots) { // do not drop items while restoring blockstates, prevents item dupe
+            while (amount > 0) {
+                int i = ExperienceOrbEntity.getXPSplit(amount);
+                amount -= i;
+                worldIn.addEntity(new ExperienceOrbEntity(worldIn, (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D, i));
             }
-            return 0;
-
         }
-        return 0;
+
     }
 }
 

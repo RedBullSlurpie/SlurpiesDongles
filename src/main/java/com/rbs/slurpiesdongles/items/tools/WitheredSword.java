@@ -1,13 +1,14 @@
 package com.rbs.slurpiesdongles.items.tools;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.MobEffects;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -20,14 +21,16 @@ public class WitheredSword extends CustomSword {
 
     //This is to add a potion effect to a mob upon hitting them
     @Override
-    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-        stack.damageItem(1, attacker);
-        target.addPotionEffect(new PotionEffect(MobEffects.WITHER, 100, 1));//100 = 5 seconds of Wither
+    public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        stack.damageItem(1, target, (p_220045_0_) -> {
+            p_220045_0_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+        });
+        target.addPotionEffect(new EffectInstance(Effects.WITHER, 100, 1));//100 = 5 seconds of Wither
 
         return true;
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TextComponentString("Upon hitting an enemy, a 5 second Wither debuff is applied to them"));
+        tooltip.add(new StringTextComponent("Upon hitting an enemy, a 5 second Wither debuff is applied to them"));
     }
 }

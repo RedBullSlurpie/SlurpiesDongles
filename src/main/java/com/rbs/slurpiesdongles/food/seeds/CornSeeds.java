@@ -4,13 +4,16 @@ import com.google.common.collect.Lists;
 import com.rbs.slurpiesdongles.Reference;
 import com.rbs.slurpiesdongles.init.ModFood;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.model.ModelResourceLocation;
-import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.BlockNamedItem;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.IPlantable;
 
 import java.util.List;
 
-public class CornSeeds extends ItemSeeds implements IPlantable {
+public class CornSeeds extends BlockNamedItem {
     public CornSeeds(String name, Block crop, Properties builder) {
         super(crop, builder);
 
@@ -31,5 +34,4 @@ public class CornSeeds extends ItemSeeds implements IPlantable {
     public List<ModelResourceLocation> getVariants() {
         return Lists.newArrayList(new ModelResourceLocation(getFullName(), "inventory"));
     }
-
 }

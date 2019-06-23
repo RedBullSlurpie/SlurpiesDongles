@@ -2,46 +2,44 @@ package com.rbs.slurpiesdongles.food;
 
 import com.rbs.slurpiesdongles.Reference;
 import com.rbs.slurpiesdongles.init.ModFood;
-import com.rbs.slurpiesdongles.init.ModTools;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.*;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BigSandwich extends ItemFood {
-    public BigSandwich(String name, Item.Properties builder) {
-        super(20, 1.0F, true, builder);
+public class BigSandwich extends Item {
 
-        this.setRegistryName(Reference.MODID, name);
+    public BigSandwich(String name, Properties properties) {
+        super(properties);
+
         ModFood.FOODS.add(this);
+    this.setRegistryName(Reference.MODID, name);
     }
 
     @Nonnull
     @Override
-    public ItemStack onItemUseFinish(@Nonnull ItemStack stack, @Nonnull World world, EntityLivingBase entityLiving) {
-        if (!(entityLiving instanceof EntityPlayer))
+    public ItemStack onItemUseFinish(@Nonnull ItemStack stack, @Nonnull World world, LivingEntity entityLiving) {
+        if (!(entityLiving instanceof PlayerEntity))
             return stack;
 
-        EntityPlayer player = (EntityPlayer) entityLiving;
+        PlayerEntity player = (PlayerEntity) entityLiving;
 
         stack.shrink(1);
         player.getFoodStats().addStats(20, 1.0F);
-        world.playSound((EntityPlayer) entityLiving, player.getPosition(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-        this.onFoodEaten(stack, world, player);
+        world.playSound((PlayerEntity) entityLiving, player.getPosition(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+        this.onItemUseFinish(stack, world, player);
         return stack;
     }
 
@@ -61,20 +59,20 @@ public class BigSandwich extends ItemFood {
      */
     @Nonnull
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, @Nonnull EnumHand hand) {
+    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity player, @Nonnull Hand hand) {
         ItemStack stack = player.getHeldItem(hand);
 
         if (player.canEat(false)) {
             player.setActiveHand(hand);
-            return new ActionResult<>(EnumActionResult.SUCCESS, stack);
+            return new ActionResult<>(ActionResultType.SUCCESS, stack);
         }
 
-        return new ActionResult<>(EnumActionResult.FAIL, stack);
+        return new ActionResult<>(ActionResultType.FAIL, stack);
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new TextComponentString("This is a big sandwich, heals alot, but takes twice as long to eat"));
+        tooltip.add(new StringTextComponent("This is a big sandwich, heals alot, but takes twice as long to eat"));
     }
 
 

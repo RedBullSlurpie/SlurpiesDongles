@@ -5,7 +5,6 @@ import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 
 /*public class Blender extends Block {
     public Blender(Block.Properties builder, String name) {

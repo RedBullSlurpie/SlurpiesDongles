@@ -1,7 +1,7 @@
 package com.rbs.slurpiesdongles.update;
 
 import com.rbs.slurpiesdongles.Reference;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -48,7 +48,7 @@ public class UpdateChecker {
             return;
         }
         System.out.println("Update available for Slurpie's Dongles");
-        event.getPlayer().sendMessage(new TextComponentTranslation("text.new_update_notification", TextFormatting.GOLD + "Slurpie's Dongles! " + TextFormatting.DARK_AQUA + "Version " +result.target.toString()));
+        event.getPlayer().sendMessage(new TranslationTextComponent("text.new_update_notification", TextFormatting.GOLD + "Slurpie's Dongles! " + TextFormatting.DARK_AQUA + "Version " +result.target.toString()));
     }
 
 }
