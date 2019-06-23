@@ -5,6 +5,7 @@ import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,20 +15,20 @@ public class ModBlocks {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
 
     //Blocks
-    public static Block BLUE_BRICKS = new CustomBricks("blue_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block CYAN__BRICKS = new CustomBricks("cyan_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block GREEN_BRICKS = new CustomBricks("green_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block ORANGE_BRICKS = new CustomBricks("orange_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block PURPLE_BRICKS = new CustomBricks("purple_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block RAINBOW_BRICKS = new CustomBricks("rainbow_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block YELLOW_BRICKS = new CustomBricks("yellow_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F));
-    public static Block BLUE_GLOWSTONE = new CustomGlowstone("blue_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block GRAY_GLOWSTONE = new CustomGlowstone("gray_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block GREEN_GLOWSTONE = new CustomGlowstone("green_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block ORANGE_GLOWSTONE = new CustomGlowstone("orange_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block PINK_GLOWSTONE = new CustomGlowstone("pink_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block PURPLE_GLOWSTONE = new CustomGlowstone("purple_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
-    public static Block RED_GLOWSTONE = new CustomGlowstone("red_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 2.0F).lightValue(15));
+    public static Block BLUE_BRICKS = new CustomBricks("blue_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block CYAN__BRICKS = new CustomBricks("cyan_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block GREEN_BRICKS = new CustomBricks("green_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block ORANGE_BRICKS = new CustomBricks("orange_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block PURPLE_BRICKS = new CustomBricks("purple_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block RAINBOW_BRICKS = new CustomBricks("rainbow_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block YELLOW_BRICKS = new CustomBricks("yellow_bricks", Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F, 10.0F), HarvestLevelHelper.STONE);
+    public static Block BLUE_GLOWSTONE = new CustomGlowstone("blue_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block GRAY_GLOWSTONE = new CustomGlowstone("gray_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block GREEN_GLOWSTONE = new CustomGlowstone("green_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block ORANGE_GLOWSTONE = new CustomGlowstone("orange_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block PINK_GLOWSTONE = new CustomGlowstone("pink_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block PURPLE_GLOWSTONE = new CustomGlowstone("purple_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
+    public static Block RED_GLOWSTONE = new CustomGlowstone("red_glowstone", Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3F, 0.3F).lightValue(15).sound(SoundType.GLASS), HarvestLevelHelper.WOOD);
     public static Block AMAZONITE_BLOCK = new BlockBase("amazonite_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.AMAZONITE);
     public static Block AMETHYST_BLOCK = new BlockBase("amethyst_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.AMETHYST);
     public static Block HARDENED_TOPAZ_BLOCK = new BlockBase("hardened_topaz_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(10.0F, 25.0F), HarvestLevelHelper.TOPAZ);
@@ -35,7 +36,7 @@ public class ModBlocks {
     public static Block REINFORCED_OBSIDIAN = new BlockBase("reinforced_obsidian",Block.Properties.create(Material.ROCK).hardnessAndResistance(100.0F, 4000.0F), HarvestLevelHelper.TOPAZ);
     public static Block RUBY_BLOCK = new BlockBase("ruby_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.RUBY);
     public static Block SAPPHIRE_BLOCK = new BlockBase("sapphire_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.SAPPHIRE);
-    public static Block TOPAZ = new BlockBase("topaz_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.TOPAZ);
+    public static Block TOPAZ_BLOCK = new BlockBase("topaz_block",Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.TOPAZ);
 
 
     //Crops

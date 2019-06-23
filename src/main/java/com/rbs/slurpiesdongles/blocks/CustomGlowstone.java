@@ -1,13 +1,15 @@
 package com.rbs.slurpiesdongles.blocks;
 
 import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -15,50 +17,18 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class CustomGlowstone extends Block {
-    public CustomGlowstone(String name, Properties builder) {
+
+    public final HarvestLevelHelper resource;
+
+    public CustomGlowstone(String name, Properties builder, HarvestLevelHelper resource) {
         super(builder);
+
+        this.resource = resource;
 
         this.setRegistryName(Reference.MODID, name);
 
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
-    }
-
-
-    /*public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return this == ModBlocks.BLUE_GLOWSTONE ? ModItems.BLUE_GLOWSTONE_DUST : (this ==
-                ModBlocks.GRAY_GLOWSTONE ? ModItems.GRAY_GLOWSTONE_DUST : (this ==
-                ModBlocks.GREEN_GLOWSTONE ? ModItems.GREEN_GLOWSTONE_DUST : (this ==
-                ModBlocks.ORANGE_GLOWSTONE ? ModItems.ORANGE_GLOWSTONE_DUST : (this ==
-                ModBlocks.PINK_GLOWSTONE ? ModItems.PINK_GLOWSTONE_DUST : (this ==
-                ModBlocks.PURPLE_GLOWSTONE ? ModItems.PURPLE_GLOWSTONE_DUST : (this ==
-                ModBlocks.RED_GLOWSTONE ? ModItems.RED_GLOWSTONE_DUST : Item.getItemFromBlock(this)))))));
-    }*/
-
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-
-        if (this == ModBlocks.BLUE_GLOWSTONE) {
-            return ModItems.BLUE_GLOWSTONE_DUST;
-    }
-        if (this == ModBlocks.GRAY_GLOWSTONE) {
-            return ModItems.GRAY_GLOWSTONE_DUST;
-        }
-        if (this == ModBlocks.GREEN_GLOWSTONE) {
-            return ModItems.GREEN_GLOWSTONE_DUST;
-        }
-        if (this == ModBlocks.ORANGE_GLOWSTONE) {
-            return ModItems.ORANGE_GLOWSTONE_DUST;
-        }
-        if (this == ModBlocks.PINK_GLOWSTONE) {
-            return ModItems.PINK_GLOWSTONE_DUST;
-        }
-        if (this == ModBlocks.PURPLE_GLOWSTONE) {
-            return ModItems.PURPLE_GLOWSTONE_DUST;
-        }
-        if (this == ModBlocks.RED_GLOWSTONE) {
-            return ModItems.RED_GLOWSTONE_DUST;
-        }
-        return this;
     }
 
     public int getItemsToDropCount(BlockState state, int fortune, World worldIn, BlockPos pos, Random random) {
@@ -67,5 +37,10 @@ public class CustomGlowstone extends Block {
 
     public int quantityDropped(BlockState state, Random random) {
         return 2 + random.nextInt(3);
+    }
+
+    @Override
+    public int getHarvestLevel(BlockState state) {
+        return resource.harvestLevel;
     }
 }

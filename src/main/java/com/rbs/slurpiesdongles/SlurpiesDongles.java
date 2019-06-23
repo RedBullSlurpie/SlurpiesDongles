@@ -2,27 +2,8 @@ package com.rbs.slurpiesdongles;
 
 import com.rbs.slurpiesdongles.events.GrassDrops;
 import com.rbs.slurpiesdongles.events.PigDrops;
-import com.rbs.slurpiesdongles.init.ModBlocks;
 import com.rbs.slurpiesdongles.update.Configuration;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.data.loot.EntityLootTables;
-import net.minecraft.entity.passive.PigEntity;
-import net.minecraft.item.Items;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.placement.CountRangeConfig;
-import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.storage.loot.*;
-import net.minecraft.world.storage.loot.conditions.LootConditionManager;
-import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.LootTableLoadEvent;
-import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -35,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
-import java.util.function.Predicate;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(value = Reference.MODID)
