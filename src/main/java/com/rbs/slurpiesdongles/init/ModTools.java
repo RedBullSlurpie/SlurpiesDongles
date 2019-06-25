@@ -40,6 +40,9 @@ public class ModTools {
     public static Item WITHERED_BATTLEAXE = new WitheredSword("withered_battleaxe", ToolMaterials.WITHERED_BATTLEAXE, 8, -3.0F, new Item.Properties().group(Reference.tabSlurpiesDongles).rarity(Rarity.EPIC));
     public static Item WOODEN_BATTLEAXE = new CustomSword("wooden_battleaxe", ItemTier.WOOD, 4, -3.0F, new Item.Properties().group(Reference.tabSlurpiesDongles));
 
+    //Hammers
+    public static Item TOPAZ_HAMMER = new CustomHammer("topaz_hammer", ToolMaterials.TOPAZ, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.TOPAZ);
+    public static Item WITHERED_HANMMER = new CustomHammer("withered_hammer", ToolMaterials.WITHERED, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles), HarvestLevelHelper.TOPAZ);
     //Hoes
     public static Item AMAZONITE_HOE = new CustomHoe("amazonite_hoe", ToolMaterials.AMAZONITE, 1, new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item AMETHYST_HOE = new CustomHoe("amethyst_hoe", ToolMaterials.AMETHYST, 1, new Item.Properties().group(Reference.tabSlurpiesDongles));
