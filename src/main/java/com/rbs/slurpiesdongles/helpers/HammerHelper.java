@@ -47,8 +47,9 @@ public class HammerHelper {
     public static void attemptBreak(World world, BlockPos pos, PlayerEntity player, Set<Block> effectiveOn, Set<Material> effectiveMaterials) {
         BlockState state = world.getBlockState(pos);
 
+        //WITHER_IMMUNE.func_199685_a_ should be .contains IF the mappings change
         boolean isEffective = effectiveOn.contains(state.getBlock()) || effectiveMaterials.contains(state.getMaterial());
-        boolean witherImmune = BlockTags.WITHER_IMMUNE.contains(state.getBlock());
+        boolean witherImmune = BlockTags.WITHER_IMMUNE.func_199685_a_(state.getBlock());
 
         if (isEffective && !witherImmune) {
             world.destroyBlock(pos, false);

@@ -41,7 +41,7 @@ public enum ToolMaterials implements IItemTier{
     }),
 
     WITHERED_BATTLEAXE(0, 0, 0.0F, 8, 17, () -> {
-        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
+        return Ingredient.fromItems(Items.NETHER_STAR);
     }),
 
     //General Tool Materials
@@ -67,8 +67,8 @@ public enum ToolMaterials implements IItemTier{
         return Ingredient.fromItems(ModItems.TOPAZ);
     }),
 
-    WITHERED(4, 0, 16.0F, 1, 17, () -> {
-        return Ingredient.fromItems(Items.WITHER_SKELETON_SKULL, Items.NETHER_STAR);
+    WITHERED(4, 0, 20.0F, 1, 17, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR);
     }),
     //Paxel Materials
 
@@ -116,8 +116,8 @@ public enum ToolMaterials implements IItemTier{
         return Ingredient.fromItems(ModItems.TOPAZ);
     }),
 
-    WITHERED_PAXEL(4, 0, 16.0F, 7, 17, () -> {
-        return Ingredient.fromItems(Items.NETHER_STAR, Items.WITHER_SKELETON_SKULL);
+    WITHERED_PAXEL(4, 0, 20.0F, 7, 17, () -> {
+        return Ingredient.fromItems(Items.NETHER_STAR);
     }),
 
     WOODEN_PAXEL(0, 177, 2.0F, 0, 15, () -> {
@@ -159,7 +159,7 @@ public enum ToolMaterials implements IItemTier{
     }),
 
     WITHERED_SWORD(0, 0, 0.0F, 7, 17, () -> {
-        return Ingredient.fromItems(Items.WITHER_SKELETON_SKULL, Items.NETHER_STAR);
+        return Ingredient.fromItems(Items.NETHER_STAR);
     });
 
     public final int harvestLevel;
