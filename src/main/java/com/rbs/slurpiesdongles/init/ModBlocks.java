@@ -53,7 +53,7 @@ public class ModBlocks {
     public static Block PERIDOT_ORE = new PeridotOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "peridot_ore", HarvestLevelHelper.PERIDOT);
     public static Block RUBY_ORE = new RubyOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "ruby_ore", HarvestLevelHelper.RUBY);
     public static Block SAPPHIRE_ORE = new SapphireOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "sapphire_ore", HarvestLevelHelper.SAPPHIRE);
-    public static Block TOPAZ_ORE = new TopazOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "topaz_ore", HarvestLevelHelper.TOPAZ);
+    public static Block TOPAZ_ORE = new TopazOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "topaz_ore", HarvestLevelHelper.DIAMOND);
     //Nether Ores
     public static Block NETHER_COAL_ORE = new NetherCoalOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "nether_coal_ore", HarvestLevelHelper.STONE);
     public static Block NETHER_DIAMOND_ORE = new NetherDiamondOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), "nether_diamond_ore", HarvestLevelHelper.IRON);

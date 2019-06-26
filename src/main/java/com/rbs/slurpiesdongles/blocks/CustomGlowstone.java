@@ -31,14 +31,6 @@ public class CustomGlowstone extends Block {
         ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
 
-    public int getItemsToDropCount(BlockState state, int fortune, World worldIn, BlockPos pos, Random random) {
-        return MathHelper.clamp(this.quantityDropped(state, random) + random.nextInt(fortune + 1), 1, 4);
-    }
-
-    public int quantityDropped(BlockState state, Random random) {
-        return 2 + random.nextInt(3);
-    }
-
     @Override
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;

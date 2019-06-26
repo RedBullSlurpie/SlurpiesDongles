@@ -42,11 +42,4 @@ public class NetherIronOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.IRON_ORE) {
-            return Items.IRON_INGOT;
-        }
-        return this;
-    }
-
 }

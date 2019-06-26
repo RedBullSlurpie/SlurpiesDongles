@@ -11,10 +11,10 @@ public enum HarvestLevelHelper {
     SAPPHIRE("sapphire", 2),
     TOPAZ("topaz", 4),
     //Vanilla
-    DIAMOND("wood", 3),
-    GOLD("wood", 0),
-    IRON("wood", 2),
-    STONE("wood", 1),
+    DIAMOND("diamond", 3),
+    GOLD("gold", 0),
+    IRON("iron", 2),
+    STONE("stone", 1),
     WOOD("wood", 0);
 
 

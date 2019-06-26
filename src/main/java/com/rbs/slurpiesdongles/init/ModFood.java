@@ -42,7 +42,6 @@ public class ModFood {
     public static FoodBase BEEF_CHICKEN_SANDWICH = new FoodBase("beef_chicken_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.BEEF_CHICKEN_SANDWICH));
     public static FoodBase BEEF_PORK_SANDWICH = new FoodBase("beef_pork_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.BEEF_PORK_SANDWICH));
     public static FoodBase BEEF_SANDWICH = new FoodBase("beef_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.BEEF_SANDWICH));
-    //public static FoodBase CABBAGE = new FoodBase("cabbage", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CABBAGE));
     public static FoodBase CARROT_STICK = new FoodBase("carrot_stick", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CARROT_STICK));
     public static FoodBase CHICKEN_NUGGET = new FoodBase("chicken_nugget", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CHICKEN_NUGGET));
     public static FoodBase CHICKEN_SANDWICH = new FoodBase("chicken_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CHICKEN_SANDWICH));
@@ -52,11 +51,9 @@ public class ModFood {
     public static FoodBase COOKED_RABBIT_LEG = new FoodBase("cooked_rabbit_leg", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.COOKED_RABBIT_LEG));
     public static FoodBase CORN = new FoodBase("corn", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CORN));
     public static FoodBase EGGS = new FoodBase("eggs", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.EGGS));
-    //public static FoodBase LEMON = new FoodBase("lemon", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON));
     public static FoodBase MELON_SLICE = new FoodBase("melon_slice", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MELON_SLICE));
     public static FoodBase MIXED_FRUIT_BOWL = new FoodBase("mixed_fruit_bowl", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_FRUIT_BOWL));
     public static FoodBase MIXED_SEEDS = new FoodBase("mixed_seeds", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_SEEDS));
-   // public static FoodBase ORANGE = new FoodBase("orange", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE));
     public static FoodBase PORK_SANDWICH = new FoodBase("pork_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.PORK_SANDWICH));
     public static FoodBase POTATO_WEDGE = new FoodBase("potato_wedge", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.POTATO_WEDGE));
     public static FoodBase RABBIT_LEG = new FoodBase("rabbit_leg", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.RABBIT_LEG));

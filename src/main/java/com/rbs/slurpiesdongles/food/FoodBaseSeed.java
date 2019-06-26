@@ -15,7 +15,6 @@ public class FoodBaseSeed extends BlockItem {
 
         this.setRegistryName(Reference.MODID, name);
         ModFood.FOODS.add(this);
-        //new Item.Properties().group(Reference.tabSlurpiesDongles);
     }
     @Override
     public String getTranslationKey() {

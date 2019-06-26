@@ -42,11 +42,4 @@ public class NetherEmeraldOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.EMERALD_ORE) {
-            return Items.EMERALD;
-        }
-        return this;
-    }
-
 }

@@ -29,30 +29,6 @@ public class TopazArmor extends ArmorItem {
             return "slurpiesdongles:textures/models/armor/topaz_layer_2.png";
         }
     }
-
-
-    /*@Override
-    public void onArmorTick(ItemStack stack, World world, EntityPlayer player) {
-        if (player.getItemStackFromSlot(EntityEquipmentSlot.HEAD) != null && player.getItemStackFromSlot(EntityEquipmentSlot.HEAD).getItem() == ModArmor.TOPAZ_HELMET
-                && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST) != null && player.getItemStackFromSlot(EntityEquipmentSlot.CHEST).getItem() == ModArmor.TOPAZ_CHESTPLATE
-                && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS) != null && player.getItemStackFromSlot(EntityEquipmentSlot.LEGS).getItem() == ModArmor.TOPAZ_LEGGINGS
-                && player.getItemStackFromSlot(EntityEquipmentSlot.FEET) != null && player.getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == ModArmor.TOPAZ_BOOTS) {
-            //player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 300, 0, false, false));
-
-            if (!player.abilities.isCreativeMode) {
-                if (!player.abilities.allowFlying) {
-                    player.abilities.allowFlying = true;
-                }
-
-            }
-        } else {
-            if (!player.abilities.isCreativeMode) {
-                player.abilities.isFlying = false;
-                player.abilities.allowFlying = false;
-            }
-
-        }
-    }*/
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.RARE : Rarity.RARE;
 

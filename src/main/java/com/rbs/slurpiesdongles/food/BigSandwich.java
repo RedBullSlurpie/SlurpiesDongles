@@ -28,6 +28,10 @@ public class BigSandwich extends Item {
     this.setRegistryName(Reference.MODID, name);
     }
 
+    /**
+     * returns the action that specifies what animation to play when the items
+     * is being used
+     */
     @Nonnull
     @Override
     public ItemStack onItemUseFinish(@Nonnull ItemStack stack, @Nonnull World world, LivingEntity entityLiving) {
@@ -43,15 +47,10 @@ public class BigSandwich extends Item {
         return stack;
     }
 
-    /**
-     * How long it takes to use or consume an item
-     */
 
 
-    /**
-     * returns the action that specifies what animation to play when the items
-     * is being used
-     */
+
+
 
     /**
      * Called whenever this item is equipped and the right mouse button is
@@ -75,8 +74,9 @@ public class BigSandwich extends Item {
         tooltip.add(new StringTextComponent("This is a big sandwich, heals alot, but takes twice as long to eat"));
     }
 
-
-
+    /**
+     * How long it takes to use or consume an item
+     */
     @Override
     public int getUseDuration(ItemStack par1ItemStack) {
         return 64;

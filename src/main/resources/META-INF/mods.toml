@@ -14,11 +14,11 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 # The modid of the mod
 modId="slurpiesdongles" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="1.0.0" #mandatory
+version="1.0.1" #mandatory
  # A display name for the mod
 displayName="Slurpie's Dongles" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="https://raw.githubusercontent.com/RedBullSlurpie/SlurpiesDongles/1.14.2/update.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/RedBullSlurpie/SlurpiesDongles/1.14.3/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://github.com/RedBullSlurpie/SlurpiesDongles/wiki" #optional
 # A file name (in the root of the mod JAR) containing a logo for display

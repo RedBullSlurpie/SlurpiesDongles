@@ -42,12 +42,5 @@ public class NetherGoldOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.GOLD_ORE) {
-            return Items.GOLD_NUGGET;
-        }
-        return this;
-    }
-
 
 }

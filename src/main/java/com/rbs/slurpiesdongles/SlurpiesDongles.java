@@ -49,66 +49,7 @@ public class SlurpiesDongles {
         // some preinit code
         MinecraftForge.EVENT_BUS.register(new PigDrops());
         OreGenerator.setupOreGen();
-        //MinecraftForge.EVENT_BUS.register(new GrassDrops());
-
-
-
-
-
-
-/*
-    private static OreFeatureConfig getOreGenFeature(Block ore, int chance, int size, int avgHeight, int spread) {
-        return Biome.Builder(Feature.ORE, new OreFeatureConfig((blockState) -> Tags.Blocks.STONE.contains(blockState.getBlock()) || Tags.Blocks.ORES.contains(blockState.getBlock()), ore.getDefaultState(), chance), Biome.DEPTH_AVERAGE, new DepthAverageConfig(size, avgHeight, spread));
-    }
-
-    private static OreFeatureConfig getNetherOreGenFeature(Block ore, int size, int count) {
-        return Biome.Builder(Feature.ORE, new OreFeatureConfig(BlockMatcher.forBlock(Blocks.NETHERRACK), ore.getDefaultState(), size), Biome.COUNT_RANGE, new CountRangeConfig(count, 10, 20, 128));
-
-    }
-    private void setup(final FMLCommonSetupEvent event)
-    {
-        // some preinit code
-        SeedsDropFromGrass.getSeedDrops();
-        MinecraftForge.EVENT_BUS.register(new MobDrops());
-
-        //World Generation
-        //Overworld
-        OreFeatureConfig amazonite_ore = getOreGenFeature(ModBlocks.AMAZONITE_ORE, 6, 4, 1, 26);
-        OreFeatureConfig amethyst_ore = getOreGenFeature(ModBlocks.AMETHYST_ORE, 5, 3, 1, 32);
-        CompositeFeature<?, ?> peridot_ore = getOreGenFeature(ModBlocks.PERIDOT_ORE, 10, 7, 1, 48);
-        CompositeFeature<?, ?> ruby_ore = getOreGenFeature(ModBlocks.RUBY_ORE, 6, 5, 1, 32);
-        CompositeFeature<?, ?> sapphire_ore = getOreGenFeature(ModBlocks.SAPPHIRE_ORE, 10, 7, 1, 48);
-        CompositeFeature<?, ?> topaz_ore = getOreGenFeature(ModBlocks.TOPAZ_ORE, 4, 4, 1, 20);
-        //Nether
-        CompositeFeature<?, ?> nether_coal_ore = getNetherOreGenFeature(ModBlocks.NETHER_COAL_ORE, 10, 10);
-        CompositeFeature<?, ?> nether_diamond_ore = getNetherOreGenFeature(ModBlocks.NETHER_DIAMOND_ORE, 3, 4);
-        CompositeFeature<?, ?> nether_emerald_ore = getNetherOreGenFeature(ModBlocks.NETHER_EMERALD_ORE, 3, 4);
-        CompositeFeature<?, ?> nether_gold_ore = getNetherOreGenFeature(ModBlocks.NETHER_GOLD_ORE, 7, 6);
-        CompositeFeature<?, ?> nether_iron_ore = getNetherOreGenFeature(ModBlocks.NETHER_IRON_ORE, 10, 8);
-        CompositeFeature<?, ?> nether_lapis_ore = getNetherOreGenFeature(ModBlocks.NETHER_LAPIS_ORE, 5, 4);
-        CompositeFeature<?, ?> nether_redstone_ore = getNetherOreGenFeature(ModBlocks.NETHER_REDSTONE_ORE, 6, 5);
-        for (Biome biome : ForgeRegistries.BIOMES.getValues()) {
-            //System.out.println(biome.getRegistryName());
-            if (biome == Biomes.NETHER) {
-                //Nether Gen
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_coal_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_diamond_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_emerald_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_iron_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_gold_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_lapis_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, nether_redstone_ore);
-            } else {
-                //Overworld Gen
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, amazonite_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, amethyst_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, peridot_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ruby_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, sapphire_ore);
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, topaz_ore);
-            }
-        }
-    }*/
+       // MinecraftForge.EVENT_BUS.register(new GrassDrops());
 
     }
 

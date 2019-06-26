@@ -42,11 +42,4 @@ public class NetherDiamondOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.DIAMOND_ORE) {
-            return Items.DIAMOND;
-        }
-        return this;
-    }
-
 }

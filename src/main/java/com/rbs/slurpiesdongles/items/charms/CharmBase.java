@@ -24,11 +24,6 @@ public abstract class CharmBase extends ItemBase {
         return Boolean.parseBoolean(null);
     }
 
-    public boolean canUpdate(ItemStack stack, PlayerEntity living, World world) {
-
-        return Boolean.parseBoolean(null);
-    }
-
 
 
     public abstract boolean onTick(ItemStack stack, PlayerEntity living, World world);

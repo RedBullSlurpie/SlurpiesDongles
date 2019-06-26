@@ -42,11 +42,4 @@ public class NetherRedstoneOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.REDSTONE_ORE) {
-            return Items.REDSTONE;
-        }
-        return this;
-    }
-
 }

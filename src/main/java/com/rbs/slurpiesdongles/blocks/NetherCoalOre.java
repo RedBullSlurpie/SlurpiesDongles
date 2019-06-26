@@ -42,11 +42,4 @@ public class NetherCoalOre extends Block {
         return resource.harvestLevel;
     }
 
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.COAL_ORE) {
-            return Items.COAL;
-        }
-        return this;
-    }
-
 }

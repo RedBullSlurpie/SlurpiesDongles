@@ -37,11 +37,4 @@ public class TopazOre extends Block {
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
-
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == ModBlocks.TOPAZ_ORE) {
-            return ModItems.TOPAZ;
-        }
-        return this;
-    }
 }

@@ -39,11 +39,4 @@ public class SapphireOre extends Block {
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
-
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == ModBlocks.SAPPHIRE_ORE) {
-            return ModItems.SAPPHIRE;
-        }
-        return this;
-    }
 }

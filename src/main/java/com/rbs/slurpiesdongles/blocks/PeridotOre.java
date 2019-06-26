@@ -39,11 +39,4 @@ public class PeridotOre extends Block {
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
-
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == ModBlocks.PERIDOT_ORE) {
-            return ModItems.PERIDOT;
-        }
-        return this;
-    }
 }

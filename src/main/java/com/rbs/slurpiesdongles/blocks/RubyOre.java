@@ -38,12 +38,4 @@ public class RubyOre extends Block {
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
-
-    public IItemProvider getItemDropped(IForgeBlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == ModBlocks.RUBY_ORE) {
-            return ModItems.RUBY;
-        }
-        return this;
-    }
-
 }

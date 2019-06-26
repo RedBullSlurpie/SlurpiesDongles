@@ -41,11 +41,4 @@ public class NetherLapisOre extends Block {
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
     }
-
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == Blocks.LAPIS_ORE) {
-            return Items.LAPIS_LAZULI;
-        }
-        return this;
-    }
 }
