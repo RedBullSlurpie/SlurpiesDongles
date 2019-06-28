@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX ",
+    "X# ",
+    "X# "
+  ],
+  "key": {
+    "#": {
+    "item": "minecraft:wither_skeleton_skull"
+    },
+    "X": {
+    "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "slurpiesdongles:withered_lumber_axe"
+  }
+}
