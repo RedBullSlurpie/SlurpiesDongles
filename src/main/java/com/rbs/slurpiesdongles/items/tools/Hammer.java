@@ -64,6 +64,6 @@ public class Hammer extends PickaxeItem implements SDTool {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent(TextFormatting.BLUE  + "Hammer that mines in a 3x3x1 from the block you mine"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW  + "Hammer that mines in a 3x3x1 from the block you mine"));
     }
 }

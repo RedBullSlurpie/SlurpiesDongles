@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -71,7 +72,7 @@ public class BigSandwich extends Item {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("This is a big sandwich, heals alot, but takes twice as long to eat"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "This is a big sandwich, heals alot, but takes twice as long to eat"));
     }
 
     /**

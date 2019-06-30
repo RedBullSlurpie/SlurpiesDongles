@@ -9,6 +9,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -31,6 +32,6 @@ public class WitheredSword extends CustomSword {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Upon hitting an enemy, a 5 second Wither debuff is applied to them"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Upon hitting an enemy, a 5 second Wither debuff is applied to them"));
     }
 }

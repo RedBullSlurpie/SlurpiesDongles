@@ -8,6 +8,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -32,7 +33,7 @@ public class WaterBreathingCharm extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Having this item in your inventory grants you Water Breathing"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Having this item in your inventory grants you Water Breathing"));
     }
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.RARE : Rarity.RARE;

@@ -21,6 +21,7 @@ import net.minecraft.util.*;;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -137,7 +138,7 @@ public class Paxel extends ToolItem {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Right click Grass to make a path, shift right click Grass to till it, and right click Logs to strip them"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Right click Grass to make a path, shift right click Grass to till it, and right click Logs to strip them"));
     }
     }
 

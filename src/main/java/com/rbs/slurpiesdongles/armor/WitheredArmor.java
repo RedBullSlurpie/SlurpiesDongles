@@ -14,6 +14,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -66,6 +67,6 @@ public class WitheredArmor extends ArmorItem {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Wearing this set gives Flight"));
+        tooltip.add(new StringTextComponent(TextFormatting.GREEN + "Wearing this armor as a set grants Flight"));
     }
 }

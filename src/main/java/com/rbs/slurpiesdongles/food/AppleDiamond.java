@@ -9,6 +9,7 @@ import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -24,6 +25,6 @@ public class AppleDiamond extends Item {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Grants Fire Resistance, Speed, & Resistance : Effects are increased on the enchanted version"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Grants Fire Resistance, Speed, & Resistance : Effects are increased on the enchanted version"));
     }
 }

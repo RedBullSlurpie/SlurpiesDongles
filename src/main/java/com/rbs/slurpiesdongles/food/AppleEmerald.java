@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -25,7 +26,7 @@ public class AppleEmerald extends Item {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Grants Absorbtion, Speed, Resistance & instant full health : Effects are increased on the enchanted version"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Grants Absorbtion, Speed, Resistance & instant full health : Effects are increased on the enchanted version"));
     }
 
 }

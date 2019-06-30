@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -37,7 +38,7 @@ public class AbsorptionCharmTier2 extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Having this item in your inventory grants you 4 Absorbtion hearts every 6 seconds. Please allow 6 seconds to apply your hearts when you first craft the item"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Having this item in your inventory grants you 4 Absorbtion hearts every 6 seconds. Please allow 6 seconds to apply your hearts when you first craft the item"));
     }
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.EPIC : Rarity.EPIC;

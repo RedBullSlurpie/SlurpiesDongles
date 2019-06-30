@@ -51,5 +51,6 @@ public class ModItems {
     public static Item POPS_SIGN = new ItemBase("pops_sign", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item TOPAZ_HANDLE = new ItemBase("topaz_handle", new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item VMP_UPGRADE = new ItemBase("vmp_upgrade", new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item VMH_UPGRADE = new ItemBase("vmh_upgrade", new Item.Properties().group(Reference.tabSlurpiesDongles));
 
 }

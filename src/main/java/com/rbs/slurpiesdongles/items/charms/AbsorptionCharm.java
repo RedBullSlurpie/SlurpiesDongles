@@ -12,6 +12,7 @@ import net.minecraft.item.Rarity;
 import net.minecraft.util.text.ITextComponent;
 
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -40,7 +41,7 @@ public class AbsorptionCharm extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("Having this item in your inventory grants you 2 Absorbtion hearts every 10 seconds. Please allow 10 seconds to apply your hearts when you first craft the item"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Having this item in your inventory grants you 2 Absorbtion hearts every 10 seconds. Please allow 10 seconds to apply your hearts when you first craft the item"));
     }
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.RARE : Rarity.RARE;

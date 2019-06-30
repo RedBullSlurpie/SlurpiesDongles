@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -34,7 +35,7 @@ public class RegenerationCharm extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent( "Having this item in your inventory grants you Health Regeneration"));
+        tooltip.add(new StringTextComponent( TextFormatting.YELLOW + "Having this item in your inventory grants you Health Regeneration"));
     }
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.RARE : Rarity.RARE;

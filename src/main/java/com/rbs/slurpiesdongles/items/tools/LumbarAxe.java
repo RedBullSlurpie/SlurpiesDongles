@@ -10,6 +10,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
@@ -17,12 +18,17 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -75,8 +81,7 @@ public class LumbarAxe extends AxeItem {
 
             if (BlockTags.LEAVES.func_199685_a_(block)) {
                 leaves++;
-            }
-            else if (BlockTags.LOGS.func_199685_a_(block)) {
+            } else if (BlockTags.LOGS.func_199685_a_(block)) {
                 logs.add(candidate);
 
 
@@ -94,7 +99,7 @@ public class LumbarAxe extends AxeItem {
 
         if (logs.size() == 0) return false;
 
-        if (leaves >= logs.size()/6.0) {
+        if (leaves >= logs.size() / 6.0) {
             MinecraftForge.EVENT_BUS.register(new Object() {
 
                 int delay = LOG_BREAK_DELAY;
@@ -108,8 +113,7 @@ public class LumbarAxe extends AxeItem {
                         BlockPos log = logs.get(i);
                         ToolHelper.attemptBreak(world, log, player, EFFECTIVE_ON, EFFECTIVE_MATERIALS);
                         i++;
-                    }
-                    else {
+                    } else {
                         MinecraftForge.EVENT_BUS.unregister(this);
                     }
                 }
@@ -119,5 +123,10 @@ public class LumbarAxe extends AxeItem {
         }
 
         return false;
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Cuts an entire tree down upon breaking the bottom log"));
     }
 }

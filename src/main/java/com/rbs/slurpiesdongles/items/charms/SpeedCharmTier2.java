@@ -8,6 +8,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -34,7 +35,7 @@ public class SpeedCharmTier2 extends CharmBase {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent( "Having this item in your inventory grants you Speed Tier 2"));
+        tooltip.add(new StringTextComponent( TextFormatting.YELLOW + "Having this item in your inventory grants you Speed Tier 2"));
     }
     public Rarity getRarity(ItemStack stack) {
         return stack.getCount() == 0 ? Rarity.EPIC : Rarity.EPIC;

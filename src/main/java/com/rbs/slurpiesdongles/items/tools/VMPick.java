@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -24,6 +25,6 @@ public class VMPick extends PickaxeItem {
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(new StringTextComponent("This pick was made for use with the mod VeinMiner, so you can veinmine for a while before needing another pick"));
+        tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "This pick was made for use with the mod VeinMiner, so you can veinmine for a while before needing another pick"));
     }
 }

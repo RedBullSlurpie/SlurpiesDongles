@@ -53,6 +53,7 @@ public class ModTools {
     public static Item SAPPHIRE_HAMMER = new Hammer("sapphire_hammer", ToolMaterials.SAPPHIRE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item STONE_HAMMER = new Hammer("stone_hammer", ItemTier.STONE, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item TOPAZ_HAMMER = new Hammer("topaz_hammer", ToolMaterials.TOPAZ, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
+    public static Item VM_HAMMER = new Hammer("vm_hammer", ToolMaterials.VMPICK, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item WITHERED_HANMMER = new Hammer("withered_hammer", ToolMaterials.WITHERED, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
     public static Item WOODEN_HAMMER = new Hammer("wooden_hammer", ItemTier.WOOD, 1, -2.8F, new Item.Properties().group(Reference.tabSlurpiesDongles));
 
