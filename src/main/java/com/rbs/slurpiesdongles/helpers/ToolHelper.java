@@ -13,8 +13,10 @@ import java.util.Random;
 import java.util.Set;
 
 /*
-Source code for this class belongs too Neurodr0me, and can be found here: https://github.com/astradamus/PracticalTools
-Credit can also be found on the Contributors page of my wiki which is here: https://github.com/RedBullSlurpie/SlurpiesDongles/wiki/Contributors
+Copyright (c) 2019 Alexander Strada - MIT License (This header, with links, must not be removed)
+     https://github.com/astradamus/PracticalTools
+     https://curseforge.com/minecraft/mc-mods/practical-tools
+     https://twitch.tv/neurodr0me
  */
 
 public class ToolHelper {
