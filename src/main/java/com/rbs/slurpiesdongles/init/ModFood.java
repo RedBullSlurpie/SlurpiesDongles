@@ -54,6 +54,7 @@ public class ModFood {
     public static FoodBase MELON_SLICE = new FoodBase("melon_slice", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MELON_SLICE));
     public static FoodBase MIXED_FRUIT_BOWL = new FoodBase("mixed_fruit_bowl", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_FRUIT_BOWL));
     public static FoodBase MIXED_SEEDS = new FoodBase("mixed_seeds", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_SEEDS));
+    public static FoodBase PIZZA = new FoodBase("pizza", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.PIZZA));
     public static FoodBase PORK_SANDWICH = new FoodBase("pork_sandwich", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.PORK_SANDWICH));
     public static FoodBase POTATO_WEDGE = new FoodBase("potato_wedge", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.POTATO_WEDGE));
     public static FoodBase RABBIT_LEG = new FoodBase("rabbit_leg", new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.RABBIT_LEG));

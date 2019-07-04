@@ -54,6 +54,7 @@ public class FoodStats {
     public static final Food MIXED_FRUIT_BOWL = (new Builder().hunger(11).saturation(0.8F).build());
     public static final Food MIXED_SEEDS = (new Builder().hunger(6).saturation(0.6F).build());
     public static final Food ORANGE = (new Builder().hunger(4).saturation(0.3F).build());
+    public static final Food PIZZA = (new Builder().hunger(10).saturation(1.0F).build());
     public static final Food PORK_SANDWICH = (new Builder().hunger(10).saturation(0.6F).build());
     public static final Food POTATO_WEDGE = (new Builder().hunger(3).saturation(0.3F).build());
     public static final Food RABBIT_LEG = (new Builder().hunger(1).saturation(0.1F).build());
