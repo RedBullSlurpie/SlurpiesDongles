@@ -11,7 +11,7 @@ import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-//@Mod.EventBusSubscriber
+/*//@Mod.EventBusSubscriber
 public class GrassDrops {
 
     @SubscribeEvent
@@ -33,7 +33,7 @@ public class GrassDrops {
 
         }
     }
-}
+}*/
 
 
 

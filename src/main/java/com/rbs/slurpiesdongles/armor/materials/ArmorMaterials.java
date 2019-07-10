@@ -17,23 +17,23 @@ import java.util.function.Supplier;
 public enum ArmorMaterials implements IArmorMaterial{
 
     AMAZONITE ("amazonite_armor", 28, new int[]{5, 7, 7, 5}, 37, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
-        return Ingredient.fromItems(ModItems.AMAZONITE);
+        return Ingredient.fromItems(ModItems.amazonite);
     }),
     AMETHYST ("amethyst_armor", 23, new int[]{4, 6, 7, 4}, 31, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
-        return Ingredient.fromItems(ModItems.AMETHYST);
+        return Ingredient.fromItems(ModItems.amethyst);
     }),
 
     PERIDOT ("peridot_armor", 20, new int[]{3, 5, 6, 3}, 27, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, () -> {
-        return Ingredient.fromItems(ModItems.PERIDOT);
+        return Ingredient.fromItems(ModItems.peridot);
     }),
     RUBY ("ruby_armor", 26, new int[]{4, 6, 7, 4}, 24, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0F, () -> {
-        return Ingredient.fromItems(ModItems.RUBY);
+        return Ingredient.fromItems(ModItems.ruby);
     }),
     SAPPHIRE ("sapphire_armor", 20, new int[]{3, 5, 6, 3}, 26, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, () -> {
-        return Ingredient.fromItems(ModItems.SAPPHIRE);
+        return Ingredient.fromItems(ModItems.sapphire);
     }),
     TOPAZ ("topaz_armor", 0, new int[]{4, 7, 8, 3}, 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {
-        return Ingredient.fromItems(ModItems.TOPAZ);
+        return Ingredient.fromItems(ModItems.topaz);
     }),
 
     WITHERED ("withered_armor", 0, new int[]{6, 9, 10, 5}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0F, () -> {

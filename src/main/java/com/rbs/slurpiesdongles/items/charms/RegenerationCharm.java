@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class RegenerationCharm extends CharmBase {
-    public RegenerationCharm (String name, Properties properties) {
+    public RegenerationCharm (Properties properties, String name) {
         super(properties, name);
     }
 

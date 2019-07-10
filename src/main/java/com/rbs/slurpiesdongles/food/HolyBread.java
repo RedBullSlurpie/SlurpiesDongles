@@ -18,11 +18,10 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class HolyBread extends Item {
-    public HolyBread(String name, Item.Properties p_i50045_1_) {
+    public HolyBread(Item.Properties p_i50045_1_, String name) {
         super(p_i50045_1_);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
     }
    @Override
     public boolean hasEffect(ItemStack stack)

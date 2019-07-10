@@ -17,11 +17,10 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class RawBacon extends Item {
-    public RawBacon(String name, Item.Properties p_i50045_1_) {
+    public RawBacon(Item.Properties p_i50045_1_, String name) {
         super(p_i50045_1_);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

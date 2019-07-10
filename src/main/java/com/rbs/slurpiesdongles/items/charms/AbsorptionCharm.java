@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class AbsorptionCharm extends CharmBase {
-    public AbsorptionCharm(String name, Item.Properties properties) {
+    public AbsorptionCharm(Item.Properties properties, String name) {
         super(properties, name);
     }
 

@@ -7,11 +7,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class FoodBaseDrink extends Item {
-    public FoodBaseDrink(String name, Item.Properties p_i50045_1_) {
+    public FoodBaseDrink(Item.Properties p_i50045_1_, String name) {
         super(p_i50045_1_);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
     }
     public UseAction getUseAction(ItemStack Stack) {
 

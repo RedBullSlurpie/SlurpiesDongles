@@ -45,11 +45,10 @@ public class LumbarAxe extends AxeItem {
     public static final int LOG_BREAK_DELAY = 1;
 
 
-    public LumbarAxe(String name, IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder) {
+    public LumbarAxe(IItemTier tier, float attackDamageIn, float attackSpeedIn, Properties builder, String name) {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModTools.TOOLS.add(this);
     }
 
     @Override

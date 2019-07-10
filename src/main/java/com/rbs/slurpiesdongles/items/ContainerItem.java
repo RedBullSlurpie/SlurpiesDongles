@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerItem extends ItemBase {
     public ContainerItem(Properties properties, String name) {
-        super(name, properties);
+        super(properties, name);
     }
 
 

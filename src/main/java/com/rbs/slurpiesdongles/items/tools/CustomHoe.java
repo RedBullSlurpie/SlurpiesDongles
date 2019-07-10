@@ -8,10 +8,9 @@ import net.minecraft.item.Item;
 
 public class CustomHoe extends HoeItem {
 
-    public CustomHoe(String name, IItemTier tier, int attackDamageIn, Item.Properties builder) {
+    public CustomHoe(IItemTier tier, int attackDamageIn, Item.Properties builder, String name) {
         super(tier, attackDamageIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModTools.TOOLS.add(this);
     }
 }

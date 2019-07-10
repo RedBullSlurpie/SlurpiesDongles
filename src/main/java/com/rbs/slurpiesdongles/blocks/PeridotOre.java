@@ -20,14 +20,11 @@ public class PeridotOre extends Block {
 
     public final HarvestLevelHelper resource;
 
-    public PeridotOre(Block.Properties builder, String name, HarvestLevelHelper resource) {
+    public PeridotOre(Block.Properties builder, HarvestLevelHelper resource, String name) {
         super(builder);
 
         this.resource = resource;
         this.setRegistryName(Reference.MODID, name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
 
     @Override

@@ -14,7 +14,7 @@ public class OreGenerator {
     public static void setupOreGen() {
 
         //First number is Vein Size, 2nd number is the chance, 3rd is ??, 4th is min height, 5th is max height
-
+/*
         for (Biome biome : ForgeRegistries.BIOMES) {
 
             biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(
@@ -71,6 +71,7 @@ public class OreGenerator {
                     Placement.COUNT_RANGE, new CountRangeConfig(5, 0, 20, 128)));
             }
 
-        }
+        }*/
     }
+}
 

@@ -13,7 +13,7 @@ public class Reference {
     public static ItemGroup tabSlurpiesDongles = new ItemGroup(ItemGroup.getGroupCountSafe(), "SlurpiesDongles") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack( ModFood.APPLE_DIAMOND_ENCHANTED);
+            return new ItemStack( ModFood.enchanted_diamond_apple);
         }
     };
 

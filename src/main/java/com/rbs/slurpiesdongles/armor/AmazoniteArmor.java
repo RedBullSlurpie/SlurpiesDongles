@@ -8,11 +8,10 @@ import net.minecraft.item.*;
 import net.minecraft.world.World;
 
 public class AmazoniteArmor extends ArmorItem {
-    public AmazoniteArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public AmazoniteArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
 
     }
 

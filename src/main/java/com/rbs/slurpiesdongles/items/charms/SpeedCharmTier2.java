@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class SpeedCharmTier2 extends CharmBase {
-    public SpeedCharmTier2 (String name, Properties properties) {
+    public SpeedCharmTier2 (Properties properties, String name) {
         super(properties, name);
     }
 

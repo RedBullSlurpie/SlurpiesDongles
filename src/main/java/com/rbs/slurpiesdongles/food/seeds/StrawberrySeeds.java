@@ -15,11 +15,10 @@ import net.minecraftforge.common.IPlantable;
 import java.util.List;
 
 public class StrawberrySeeds extends BlockNamedItem {
-    public StrawberrySeeds(String name, Block crop, Properties builder) {
+    public StrawberrySeeds(Properties builder, Block crop, String name) {
         super(crop, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
     }
 
     public String getFullName() {

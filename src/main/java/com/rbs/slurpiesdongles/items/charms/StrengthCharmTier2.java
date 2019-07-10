@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class StrengthCharmTier2 extends CharmBase {
-    public StrengthCharmTier2 (String name, Properties properties) {
+    public StrengthCharmTier2 (Properties properties, String name) {
         super(properties, name);
     }
 

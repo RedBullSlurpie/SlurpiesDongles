@@ -10,11 +10,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class AmethystArmor extends ArmorItem {
-    public AmethystArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public AmethystArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
 
     }
     @Override

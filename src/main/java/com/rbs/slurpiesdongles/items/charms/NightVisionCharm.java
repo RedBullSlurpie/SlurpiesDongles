@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class NightVisionCharm extends CharmBase {
-    public NightVisionCharm (String name, Properties properties) {
+    public NightVisionCharm (Properties properties, String name) {
         super(properties, name);
     }
 

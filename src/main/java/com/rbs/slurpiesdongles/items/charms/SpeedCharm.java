@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class SpeedCharm extends CharmBase {
-    public SpeedCharm (String name, Properties properties) {
+    public SpeedCharm (Properties properties, String name) {
         super(properties, name);
     }
 

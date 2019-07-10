@@ -32,14 +32,11 @@ public class CornCrop extends CropsBlock {
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 
 
-    public CornCrop(String name, Properties builder) {
+    public CornCrop(Properties builder, String name) {
         super(builder);
         this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
 
         this.setRegistryName(Reference.MODID, name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
 
     }
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
@@ -146,7 +143,7 @@ public class CornCrop extends CropsBlock {
     }
     @OnlyIn(Dist.CLIENT)
     protected IItemProvider getSeedsItem() {
-        return ModFood.CORN_SEED;
+        return ModFood.corn_seed;
     }
 
     public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {

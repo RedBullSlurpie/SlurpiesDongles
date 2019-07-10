@@ -8,10 +8,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ShovelItem;
 
 public class CustomShovel extends ShovelItem {
-    public CustomShovel(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder, HarvestLevelHelper resource) {
+    public CustomShovel(IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder, HarvestLevelHelper resource, String name) {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModTools.TOOLS.add(this);
     }
 }

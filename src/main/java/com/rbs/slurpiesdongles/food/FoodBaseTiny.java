@@ -13,11 +13,11 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 public class FoodBaseTiny extends Item {
-    public FoodBaseTiny(String name, Item.Properties p_i50045_1_) {
+    public FoodBaseTiny(Item.Properties p_i50045_1_, String name) {
         super(p_i50045_1_);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
+
     }
 
     @Override

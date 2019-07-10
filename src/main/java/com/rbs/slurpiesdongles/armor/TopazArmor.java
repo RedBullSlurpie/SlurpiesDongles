@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class TopazArmor extends ArmorItem {
-    public TopazArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public TopazArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
+
 
     }
 

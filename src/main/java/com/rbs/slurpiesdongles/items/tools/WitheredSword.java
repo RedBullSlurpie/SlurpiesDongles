@@ -16,8 +16,8 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class WitheredSword extends CustomSword {
-    public WitheredSword(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder) {
-        super(name, tier, attackDamageIn, attackSpeedIn, builder);
+    public WitheredSword(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder, String name) {
+        super(tier, attackDamageIn, attackSpeedIn, builder, name);
     }
 
     //This is to add a potion effect to a mob upon hitting them

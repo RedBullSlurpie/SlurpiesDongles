@@ -22,14 +22,12 @@ public class AmethystOre extends Block {
 
     public final HarvestLevelHelper resource;
 
-    public AmethystOre(Block.Properties builder, String name, HarvestLevelHelper resource) {
+    public AmethystOre(Block.Properties builder, HarvestLevelHelper resource, String name) {
         super(builder);
 
         this.resource = resource;
         this.setRegistryName(Reference.MODID, name);
 
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem( this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
 
     @Override
@@ -40,12 +38,6 @@ public class AmethystOre extends Block {
     @Override
     public int getHarvestLevel(BlockState state) {
         return resource.harvestLevel;
-    }
-    public IItemProvider getItemDropped(BlockState state, World worldIn, BlockPos pos, int fortune) {
-        if (this == ModBlocks.AMETHYST_ORE) {
-            return ModItems.AMETHYST;
-        }
-        return this;
     }
 
     @Override

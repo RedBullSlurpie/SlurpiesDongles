@@ -6,11 +6,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ItemBase extends Item {
-    public ItemBase(String name, Properties properties) {
+    public ItemBase(Properties properties, String name) {
         super(properties);
 
         this.setRegistryName(Reference.MODID, name);
-        ModItems.ITEMS.add(this);
     }
 
 }

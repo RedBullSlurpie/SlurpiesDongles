@@ -19,13 +19,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class LemonCrop extends CropsBlock {
     private static final VoxelShape[] SHAPES = new VoxelShape[]{Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)};
 
-    public LemonCrop(String name, Properties builder) {
+    public LemonCrop(Properties builder, String name) {
         super(builder);
 
         this.setRegistryName(Reference.MODID, name);
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
 
     }
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
@@ -34,7 +31,7 @@ public class LemonCrop extends CropsBlock {
 
     @OnlyIn(Dist.CLIENT)
     public IItemProvider getSeedsItem() {
-        return ModFood.LEMON;
+        return ModFood.lemon;
     }
 
 }

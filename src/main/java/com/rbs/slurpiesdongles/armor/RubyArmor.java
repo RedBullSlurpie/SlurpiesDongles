@@ -11,11 +11,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class RubyArmor extends ArmorItem {
-    public RubyArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public RubyArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
+
 
     }
     @Override

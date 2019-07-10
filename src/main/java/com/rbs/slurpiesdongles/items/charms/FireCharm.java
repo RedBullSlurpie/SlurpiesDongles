@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class FireCharm extends CharmBase {
-    public FireCharm (String name, Item.Properties properties) {
+    public FireCharm (Item.Properties properties, String name) {
         super(properties, name);
     }
 

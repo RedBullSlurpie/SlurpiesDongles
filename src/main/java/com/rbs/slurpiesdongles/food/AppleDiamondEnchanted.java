@@ -20,11 +20,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class AppleDiamondEnchanted extends Item {
-    public AppleDiamondEnchanted (String name, Properties p_i50045_1_) {
+    public AppleDiamondEnchanted (Properties p_i50045_1_, String name) {
         super(p_i50045_1_);
 
         this.setRegistryName(Reference.MODID, name);
-        ModFood.FOODS.add(this);
+
     }
 
     @OnlyIn(Dist.CLIENT)

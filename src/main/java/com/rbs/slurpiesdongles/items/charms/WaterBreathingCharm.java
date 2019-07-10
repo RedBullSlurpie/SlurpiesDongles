@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class WaterBreathingCharm extends CharmBase {
-    public WaterBreathingCharm (String name, Properties properties) {
+    public WaterBreathingCharm (Properties properties, String name) {
         super(properties, name);
     }
 

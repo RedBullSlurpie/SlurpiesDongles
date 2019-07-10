@@ -10,11 +10,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class PeridotArmor extends ArmorItem {
-    public PeridotArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public PeridotArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
+
 
     }
     @Override

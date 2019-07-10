@@ -21,7 +21,6 @@ public class VMPick extends PickaxeItem {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModTools.TOOLS.add(this);
     }
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

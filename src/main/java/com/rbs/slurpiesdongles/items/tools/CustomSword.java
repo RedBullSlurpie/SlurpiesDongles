@@ -7,10 +7,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
 
 public class CustomSword extends SwordItem {
-    public CustomSword(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder) {
+    public CustomSword(IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder, String name) {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModTools.TOOLS.add(this);
+
     }
 }

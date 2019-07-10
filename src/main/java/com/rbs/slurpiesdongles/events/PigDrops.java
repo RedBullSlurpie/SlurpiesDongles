@@ -18,11 +18,11 @@ public class PigDrops {
             if ((event.getEntityLiving() instanceof PigEntity)) {
 
                 if (rand < 0.5D) {
-                    event.getEntityLiving().entityDropItem(ModFood.RAW_BACON, 1);
+                    event.getEntityLiving().entityDropItem(ModFood.raw_bacon, 1);
 
                 }
                 if (rand < 0.25D) {
-                    event.getEntityLiving().entityDropItem(ModFood.RAW_BACON, 1);
+                    event.getEntityLiving().entityDropItem(ModFood.raw_bacon, 1);
                 }
             }
         }

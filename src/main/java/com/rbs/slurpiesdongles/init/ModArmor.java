@@ -5,41 +5,81 @@ import com.rbs.slurpiesdongles.armor.*;
 import com.rbs.slurpiesdongles.armor.materials.ArmorMaterials;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ObjectHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD) //This line tells forge this class has events we want to listen to, we also tell forge we want to listen to the Mod bus. (This is new in 1.13)
+@ObjectHolder(Reference.MODID) //We use ObjectHolder to let forge inject the item into our variables, this to make sure when people replace our item we use the correct one.
+
 public class ModArmor {
+    //Armor
+    public static final Item amazonite_helmet = null;
+    public static final Item amazonite_chestplate = null;
+    public static final Item amazonite_leggings = null;
+    public static final Item amazonite_boots = null;
+    public static final Item amethyst_helmet = null;
+    public static final Item amethyst_chestplate = null;
+    public static final Item amethyst_leggings = null;
+    public static final Item amethyst_boots = null;
+    public static final Item peridot_helmet = null;
+    public static final Item peridot_chestplate = null;
+    public static final Item peridot_leggings = null;
+    public static final Item peridot_boots = null;
+    public static final Item ruby_helmet = null;
+    public static final Item ruby_chestplate = null;
+    public static final Item ruby_leggings = null;
+    public static final Item ruby_boots = null;
+    public static final Item sapphire_helmet = null;
+    public static final Item sapphire_chestplate = null;
+    public static final Item sapphire_leggings = null;
+    public static final Item sapphire_boots = null;
+    public static final Item topaz_helmet = null;
+    public static final Item topaz_chestplate = null;
+    public static final Item topaz_leggings = null;
+    public static final Item topaz_boots = null;
+    public static final Item withered_helmet = null;
+    public static final Item withered_chestplate = null;
+    public static final Item withered_leggings = null;
+    public static final Item withered_boots = null;
 
-    public static final List<Item> ARMORS = new ArrayList<>();
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+        event.getRegistry().registerAll(
+                //Armor
+                new AmazoniteArmor(ArmorMaterials.AMAZONITE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "amazonite_helmet"),
+                new AmazoniteArmor(ArmorMaterials.AMAZONITE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "amazonite_chestplate"),
+                new AmazoniteArmor(ArmorMaterials.AMAZONITE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "amazonite_leggings"),
+                new AmazoniteArmor(ArmorMaterials.AMAZONITE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "amazonite_boots"),
+                new AmethystArmor(ArmorMaterials.AMETHYST, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "amethyst_helmet"),
+                new AmethystArmor(ArmorMaterials.AMETHYST, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "amethyst_chestplate"),
+                new AmethystArmor(ArmorMaterials.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "amethyst_leggings"),
+                new AmethystArmor(ArmorMaterials.AMETHYST, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "amethyst_boots"),
+                new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_helmet"),
+                new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_chestplate"),
+                new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_leggings"),
+                new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_boots"),
+                new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_helmet"),
+                new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_chestplate"),
+                new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_leggings"),
+                new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_boots"),
+                new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_helmet"),
+                new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_chestplate"),
+                new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_leggings"),
+                new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_boots"),
+                new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_helmet"),
+                new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_chestplate"),
+                new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_leggings"),
+                new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_boots"),
+                new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_helmet"),
+                new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_chestplate"),
+                new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_leggings"),
+                new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_boots")
 
-    public static Item AMAZONITE_HELMET = new AmazoniteArmor("amazonite_helmet", ArmorMaterials.AMAZONITE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMAZONITE_CHESTPLATE = new AmazoniteArmor("amazonite_chestplate", ArmorMaterials.AMAZONITE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMAZONITE_LEGGINGS = new AmazoniteArmor("amazonite_leggings", ArmorMaterials.AMAZONITE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMAZONITE_BOOTS = new AmazoniteArmor("amazonite_boots", ArmorMaterials.AMAZONITE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_HELMET = new AmethystArmor("amethyst_helmet", ArmorMaterials.AMETHYST, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_CHESTPLATE = new AmethystArmor("amethyst_chestplate", ArmorMaterials.AMETHYST, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_LEGGINGS = new AmethystArmor("amethyst_leggings", ArmorMaterials.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item AMETHYST_BOOTS = new AmethystArmor("amethyst_boots", ArmorMaterials.AMETHYST, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item WITHERED_HELMET = new WitheredArmor("withered_helmet", ArmorMaterials.WITHERED, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item WITHERED_CHESTPLATE = new WitheredArmor("withered_chestplate", ArmorMaterials.WITHERED, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item WITHERED_LEGGINGS = new WitheredArmor("withered_leggings", ArmorMaterials.WITHERED, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item WITHERED_BOOTS = new WitheredArmor("withered_boots", ArmorMaterials.WITHERED, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_HELMET = new PeridotArmor("peridot_helmet", ArmorMaterials.PERIDOT, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_CHESTPLATE = new PeridotArmor("peridot_chestplate", ArmorMaterials.PERIDOT, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_LEGGINGS = new PeridotArmor("peridot_leggings", ArmorMaterials.PERIDOT, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item PERIDOT_BOOTS = new PeridotArmor("peridot_boots", ArmorMaterials.PERIDOT, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_HELMET = new RubyArmor("ruby_helmet", ArmorMaterials.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_CHESTPLATE = new RubyArmor("ruby_chestplate", ArmorMaterials.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_LEGGINGS = new RubyArmor("ruby_leggings", ArmorMaterials.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item RUBY_BOOTS = new RubyArmor("ruby_boots", ArmorMaterials.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_HELMET = new SapphireArmor("sapphire_helmet", ArmorMaterials.SAPPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_CHESTPLATE = new SapphireArmor("sapphire_chestplate", ArmorMaterials.SAPPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_LEGGINGS = new SapphireArmor("sapphire_leggings", ArmorMaterials.SAPPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item SAPPHIRE_BOOTS = new SapphireArmor("sapphire_boots", ArmorMaterials.SAPPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_HELMET = new TopazArmor("topaz_helmet", ArmorMaterials.TOPAZ, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_CHESTPLATE = new TopazArmor("topaz_chestplate", ArmorMaterials.TOPAZ, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_LEGGINGS = new TopazArmor("topaz_leggings", ArmorMaterials.TOPAZ, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles));
-    public static Item TOPAZ_BOOTS = new TopazArmor("topaz_boots", ArmorMaterials.TOPAZ, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles));
-
+        );
+    }
 }

@@ -32,14 +32,11 @@ public class StrawberryCrop extends CropsBlock {
     public static final IntegerProperty STRAWBERRY_AGE;
     private static final VoxelShape[] SHAPE;
 
-    public StrawberryCrop(String name, Properties p_i48441_1_) {
+    public StrawberryCrop(Properties p_i48441_1_, String name) {
         super(p_i48441_1_);
 
         this.setRegistryName(Reference.MODID, name);
         this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
-
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
 
     }
     public IntegerProperty getAgeProperty() {
@@ -51,7 +48,7 @@ public class StrawberryCrop extends CropsBlock {
     }
     @OnlyIn(Dist.CLIENT)
     protected IItemProvider getSeedsItem() {
-        return ModFood.STRAWBERRY_SEEDS;
+        return ModFood.strawberry_seed;
     }
 
     //protected IItemProvider getCropsItem() {

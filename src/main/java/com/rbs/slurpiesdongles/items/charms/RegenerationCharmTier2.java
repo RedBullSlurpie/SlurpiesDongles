@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class RegenerationCharmTier2 extends CharmBase {
-    public RegenerationCharmTier2 (String name, Properties properties) {
+    public RegenerationCharmTier2 (Properties properties, String name) {
         super(properties, name);
     }
 

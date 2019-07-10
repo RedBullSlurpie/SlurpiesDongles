@@ -9,7 +9,8 @@ import net.minecraft.world.World;
 
 public abstract class CharmBase extends ItemBase {
     public CharmBase(Properties properties, String name) {
-        super(name, properties);
+
+        super(properties, name);
     }
     public abstract void onTick(ItemStack stack, PlayerEntity living);
 

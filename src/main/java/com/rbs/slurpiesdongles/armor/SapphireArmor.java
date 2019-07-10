@@ -11,11 +11,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class SapphireArmor extends ArmorItem {
-    public SapphireArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public SapphireArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
+
 
     }
 

@@ -1,7 +1,6 @@
 package com.rbs.slurpiesdongles.food;
 
 import com.rbs.slurpiesdongles.Reference;
-import com.rbs.slurpiesdongles.init.ModFood;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,10 +21,9 @@ import java.util.List;
 
 public class BigSandwich extends Item {
 
-    public BigSandwich(String name, Properties properties) {
+    public BigSandwich(Properties properties, String name) {
         super(properties);
 
-        ModFood.FOODS.add(this);
     this.setRegistryName(Reference.MODID, name);
     }
 
@@ -44,7 +42,6 @@ public class BigSandwich extends Item {
         stack.shrink(1);
         player.getFoodStats().addStats(20, 1.0F);
         world.playSound((PlayerEntity) entityLiving, player.getPosition(), SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-        this.onItemUseFinish(stack, world, player);
         return stack;
     }
 

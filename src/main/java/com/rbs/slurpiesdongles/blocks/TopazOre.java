@@ -20,13 +20,11 @@ public class TopazOre extends Block {
 
     public final HarvestLevelHelper resource;
 
-    public TopazOre(Block.Properties builder, String name, HarvestLevelHelper resource) {
+    public TopazOre(Block.Properties builder, HarvestLevelHelper resource, String name) {
         super(builder);
 
         this.setRegistryName(Reference.MODID, name);
         this.resource = resource;
-        ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new BlockItem(this, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(this.getRegistryName()));
     }
     @Override
     public ToolType getHarvestTool(BlockState state) {

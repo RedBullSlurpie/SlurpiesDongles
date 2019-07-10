@@ -21,11 +21,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class WitheredArmor extends ArmorItem {
-    public WitheredArmor(String name, IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder) {
+    public WitheredArmor(IArmorMaterial materialIn, EquipmentSlotType slots, Item.Properties builder, String name) {
         super(materialIn, slots, builder);
 
         this.setRegistryName(Reference.MODID, name);
-        ModArmor.ARMORS.add(this);
+
 
     }
 
@@ -41,10 +41,10 @@ public class WitheredArmor extends ArmorItem {
 
     @Override
     public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if (player.getItemStackFromSlot(EquipmentSlotType.HEAD) != null && player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() == ModArmor.WITHERED_HELMET
-                && player.getItemStackFromSlot(EquipmentSlotType.CHEST) != null && player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == ModArmor.WITHERED_CHESTPLATE
-                && player.getItemStackFromSlot(EquipmentSlotType.LEGS) != null && player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() == ModArmor.WITHERED_LEGGINGS
-                && player.getItemStackFromSlot(EquipmentSlotType.FEET) != null && player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == ModArmor.WITHERED_BOOTS) {
+        if (player.getItemStackFromSlot(EquipmentSlotType.HEAD) != null && player.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() == ModArmor.withered_helmet
+                && player.getItemStackFromSlot(EquipmentSlotType.CHEST) != null && player.getItemStackFromSlot(EquipmentSlotType.CHEST).getItem() == ModArmor.withered_chestplate
+                && player.getItemStackFromSlot(EquipmentSlotType.LEGS) != null && player.getItemStackFromSlot(EquipmentSlotType.LEGS).getItem() == ModArmor.withered_leggings
+                && player.getItemStackFromSlot(EquipmentSlotType.FEET) != null && player.getItemStackFromSlot(EquipmentSlotType.FEET).getItem() == ModArmor.withered_boots) {
 
             if (!player.abilities.isCreativeMode) {
                 if (!player.abilities.allowFlying) {
