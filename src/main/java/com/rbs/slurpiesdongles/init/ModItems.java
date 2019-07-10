@@ -6,6 +6,7 @@ import com.rbs.slurpiesdongles.items.charms.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.WallOrFloorItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -97,6 +98,7 @@ public class ModItems {
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_handle"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmh_upgrade"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmp_upgrade"),
+                new WallOrFloorItem(ModBlocks.stone_torch, ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(ModBlocks.stone_torch.getRegistryName()),
 
                 //Block Items
                 //Blocks
@@ -121,8 +123,6 @@ public class ModItems {
                 createItemBlockForBlock(ModBlocks.reinforced_obsidian, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.ruby_block, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.sapphire_block, new Item.Properties().group(Reference.tabSlurpiesDongles)),
-                createItemBlockForBlock(ModBlocks.stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)),
-                //createItemBlockForBlock(ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.topaz_block, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 //Crops
                 createItemBlockForBlock(ModBlocks.cabbage_crop, new Item.Properties().group(Reference.tabSlurpiesDongles)),

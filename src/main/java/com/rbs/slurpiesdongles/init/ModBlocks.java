@@ -9,6 +9,8 @@ import net.minecraft.block.TorchBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.client.audio.Sound;
+import net.minecraft.item.Item;
+import net.minecraft.item.WallOrFloorItem;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -43,7 +45,7 @@ public class ModBlocks {
     public static final Block ruby_block = null;
     public static final Block sapphire_block = null;
     public static final Block stone_torch = null;
-    //public static final Block wall_stone_torch = null;
+    public static final Block wall_stone_torch = null;
     public static final Block topaz_block = null;
     //Crops
     public static final Block cabbage_crop = null;
@@ -93,8 +95,8 @@ public class ModBlocks {
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.RUBY, "ruby_block"),
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.SAPPHIRE, "sapphire_block"),
                 new StoneTorch(Block.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.0F, 0.0F), SoundType.STONE, "stone_torch"),
-               // new WallStoneTorch(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F, 0.0F), SoundType.STONE, "wall_stone_torch"),
-                new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.AMAZONITE, "topaz_block"),
+                new WallStoneTorch(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F, 0.0F), SoundType.STONE, "wall_stone_torch"),
+                new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.TOPAZ, "topaz_block"),
                 //Crops
                 new CabbageCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "cabbage_crop"),
                 new CornCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "corn_crop"),
