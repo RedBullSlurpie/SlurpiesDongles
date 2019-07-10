@@ -52,6 +52,7 @@ public class ModItems {
     public static final Item blender = null;
     public static final Item hot_water = null;
     public static final Item knife = null;
+    public static final Item nether_star_chunk = null;
     public static final Item pops_sign = null;
     public static final Item stone_rod = null;
     public static final Item topaz_handle = null;
@@ -93,13 +94,13 @@ public class ModItems {
                 new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "blender"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "hot_water"),
                 new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "knife"),
+                new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "nether_star_chunk"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "pops_sign"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "stone_rod"),
+                new WallOrFloorItem(ModBlocks.stone_torch, ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(ModBlocks.stone_torch.getRegistryName()),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_handle"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmh_upgrade"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmp_upgrade"),
-                new WallOrFloorItem(ModBlocks.stone_torch, ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(ModBlocks.stone_torch.getRegistryName()),
-
                 //Block Items
                 //Blocks
                 createItemBlockForBlock(ModBlocks.blue_bricks, new Item.Properties().group(Reference.tabSlurpiesDongles)),

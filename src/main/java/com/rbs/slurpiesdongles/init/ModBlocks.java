@@ -94,8 +94,8 @@ public class ModBlocks {
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(100.0F, 4000.0F), HarvestLevelHelper.TOPAZ, "reinforced_obsidian"),
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.RUBY, "ruby_block"),
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.SAPPHIRE, "sapphire_block"),
-                new StoneTorch(Block.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.0F, 0.0F), SoundType.STONE, "stone_torch"),
-                new WallStoneTorch(Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F, 0.0F), SoundType.STONE, "wall_stone_torch"),
+                new StoneTorch(Block.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.0F, 0.0F).lightValue(10), SoundType.STONE, "stone_torch"),
+                new WallStoneTorch(Block.Properties.create(Material.MISCELLANEOUS).doesNotBlockMovement().hardnessAndResistance(0.0F, 0.0F).lightValue(10), SoundType.STONE, "wall_stone_torch"),
                 new BlockBase(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 5.0F), HarvestLevelHelper.TOPAZ, "topaz_block"),
                 //Crops
                 new CabbageCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "cabbage_crop"),

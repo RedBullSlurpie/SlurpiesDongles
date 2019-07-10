@@ -10,7 +10,7 @@
     "item": "minecraft:wither_skeleton_skull"
     },
     "T": {
-    "item": "minecraft:nether_star"
+    "item": "slurpiesdongles:nether_star_chunk"
     }
   },
   "result": {
