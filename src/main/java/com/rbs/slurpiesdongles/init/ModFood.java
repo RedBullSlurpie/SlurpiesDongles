@@ -53,6 +53,7 @@ public class ModFood {
     public static final Item cooked_rabbit_leg = null;
     public static final Item corn = null;
     public static final Item eggs = null;
+    public static final Item melon_slice = null;
     public static final Item mixed_fruit_bowl = null;
     public static final Item mixed_seeds = null;
     public static final Item pizza = null;
@@ -127,6 +128,7 @@ public class ModFood {
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.COOKED_RABBIT_LEG), "cooked_rabbit_leg"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CORN), "corn"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.EGGS), "eggs"),
+                new FoodBaseTiny(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MELON_SLICE), "melon_slice"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_FRUIT_BOWL), "mixed_fruit_bowl"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.MIXED_SEEDS), "mixed_seeds"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.PIZZA), "pizza"),
