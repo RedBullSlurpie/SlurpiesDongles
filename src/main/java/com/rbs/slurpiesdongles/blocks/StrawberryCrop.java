@@ -51,10 +51,6 @@ public class StrawberryCrop extends CropsBlock {
         return ModFood.strawberry_seed;
     }
 
-    //protected IItemProvider getCropsItem() {
-        //return ModFood.STRAWBERRY;
-    //}
-
     public void tick(BlockState p_196267_1_, World p_196267_2_, BlockPos p_196267_3_, Random p_196267_4_) {
         if (p_196267_4_.nextInt(3) != 0) {
             super.tick(p_196267_1_, p_196267_2_, p_196267_3_, p_196267_4_);
