@@ -80,9 +80,9 @@ public class LumbarAxe extends AxeItem {
             BlockPos candidate = candidates.get(i);
             Block block = world.getBlockState(candidate).getBlock();
 
-            if (BlockTags.LEAVES.func_199685_a_(block)) {
+            if (BlockTags.LEAVES.contains(block)) {
                 leaves++;
-            } else if (BlockTags.LOGS.func_199685_a_(block)) {
+            } else if (BlockTags.LOGS.contains(block)) {
                 logs.add(candidate);
 
 

@@ -179,7 +179,7 @@ public interface SDTool {
             ORE_BLOCKS.clear();
 
             for (Block block : ForgeRegistries.BLOCKS) {
-                if (block instanceof OreBlock || Tags.Blocks.ORES.func_199685_a_(block)) {
+                if (block instanceof OreBlock || Tags.Blocks.ORES.contains(block)) {
                     ORE_BLOCKS.add(block);
                 }
             }
@@ -214,7 +214,7 @@ public interface SDTool {
         @SubscribeEvent
         public static void onDrawBlockHighlight(DrawBlockHighlightEvent event) {
             ActiveRenderInfo info = event.getInfo();
-            Entity entity = info.func_216773_g();
+            Entity entity = info.getRenderViewEntity();
             if (!(entity instanceof PlayerEntity)) return;
 
             PlayerEntity player = (PlayerEntity) entity;
