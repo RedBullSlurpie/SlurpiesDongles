@@ -35,7 +35,7 @@ public class UpdateChecker {
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
-    public static void onJoinGame(net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent event) {
+    public static void onJoinGame(net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent event) {
         if (!Configuration.COMMON.showNewUpdateNotifications.get())
             return;
         System.out.println("Checking for update on join...");
