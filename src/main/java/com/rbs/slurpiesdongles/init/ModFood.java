@@ -155,9 +155,9 @@ public class ModFood {
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOASTED_BACON_EGG_SANDWICH), "toasted_bacon_egg_sandwitch"),
                 //Food but Crops
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CABBAGE), ModBlocks.cabbage_crop, "cabbage"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON), ModBlocks.cabbage_crop, "lemon"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.cabbage_crop, "orange"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.cabbage_crop, "tomato"),
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON), ModBlocks.lemon_crop, "lemon"),
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.orange_crop, "orange"),
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.tomato_crop, "tomato"),
                 //Regen Stuff
                 new AppleDiamond(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.DIAMOND_APPLE), "diamond_apple"),
                 new AppleDiamondEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_DIAMOND_APPLE), "enchanted_diamond_apple"),
