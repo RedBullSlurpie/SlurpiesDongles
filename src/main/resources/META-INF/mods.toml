@@ -18,7 +18,7 @@ version="1.0.10" #mandatory
  # A display name for the mod
 displayName="Slurpie's Dongles" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="https://raw.githubusercontent.com/RedBullSlurpie/SlurpiesDongles/1.14.3/update.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/RedBullSlurpie/SlurpiesDongles/1.14.4/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
 displayURL="https://github.com/RedBullSlurpie/SlurpiesDongles/wiki" #optional
 # A file name (in the root of the mod JAR) containing a logo for display

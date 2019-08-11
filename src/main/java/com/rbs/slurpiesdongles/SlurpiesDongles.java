@@ -48,7 +48,6 @@ public class SlurpiesDongles {
         // some preinit code
         MinecraftForge.EVENT_BUS.register(new PigDrops());
         OreGenerator.setupOreGen();
-       // MinecraftForge.EVENT_BUS.register(new GrassDrops());
 
     }
 
