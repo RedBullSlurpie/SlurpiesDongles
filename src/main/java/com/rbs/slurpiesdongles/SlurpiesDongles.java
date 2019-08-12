@@ -1,5 +1,6 @@
 package com.rbs.slurpiesdongles;
 
+import com.rbs.slurpiesdongles.events.GrassDropsEvent;
 import com.rbs.slurpiesdongles.events.PigDrops;
 import com.rbs.slurpiesdongles.update.Configuration;
 import net.minecraftforge.common.MinecraftForge;
