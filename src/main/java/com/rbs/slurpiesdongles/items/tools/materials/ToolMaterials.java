@@ -1,5 +1,6 @@
 package com.rbs.slurpiesdongles.items.tools.materials;
 
+import com.rbs.slurpiesdongles.config.ConfigGeneral;
 import com.rbs.slurpiesdongles.init.ModItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.IItemTier;

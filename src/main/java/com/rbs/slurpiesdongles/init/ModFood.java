@@ -1,6 +1,7 @@
 package com.rbs.slurpiesdongles.init;
 
 import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.config.ConfigGeneral;
 import com.rbs.slurpiesdongles.food.*;
 //import com.rbs.slurpiesdongles.food.seeds.CornSeeds;
 //import com.rbs.slurpiesdongles.food.seeds.StrawberrySeeds;
@@ -84,12 +85,12 @@ public class ModFood {
     public static final Item orange = null;
     public static final Item tomato = null;
     //Regen Stuff
-    public static final Item diamond_apple = null;
-    public static final Item enchanted_diamond_apple = null;
-    public static final Item emerald_apple = null;
-    public static final Item enchanted_emerald_apple = null;
-    public static final Item iron_apple = null;
-    public static final Item enchanted_iron_apple = null;
+    public static Item diamond_apple = null;
+    public static Item enchanted_diamond_apple = null;
+    public static Item emerald_apple = null;
+    public static Item enchanted_emerald_apple = null;
+    public static Item iron_apple = null;
+    public static Item enchanted_iron_apple = null;
     public static final Item holy_bread = null;
     //Seeds
     public static final Item corn_seed = null;
@@ -159,16 +160,31 @@ public class ModFood {
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.orange_crop, "orange"),
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.tomato_crop, "tomato"),
                 //Regen Stuff
-                new AppleDiamond(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.DIAMOND_APPLE), "diamond_apple"),
-                new AppleDiamondEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_DIAMOND_APPLE), "enchanted_diamond_apple"),
-                new AppleEmerald(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.EMERALD_APPLE), "emerald_apple"),
-                new AppleEmeraldEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_EMERALD_APPLE), "enchanted_emerald_apple"),
-                new AppleIron(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.IRON_APPLE), "iron_apple"),
-                new AppleIronEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_IRON_APPLE), "enchanted_iron_apple"),
                 new HolyBread(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.HOLY_BREAD), "holy_bread"),
                 //Seeds
                 new CornSeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.corn_crop, "corn_seed"),
                 new StrawberrySeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.strawberry_crop, "strawberry_seed")
         );
+        event.getRegistry().registerAll(); {
+            if (ConfigGeneral.disableDiamondApple.get()) {
+                event.getRegistry().register(diamond_apple = new AppleDiamond(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.DIAMOND_APPLE), "diamond_apple"));
+            }
+            if (ConfigGeneral.disableEnchantedDiamondApple.get()) {
+                event.getRegistry().register(enchanted_diamond_apple = new AppleDiamondEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_DIAMOND_APPLE), "enchanted_diamond_apple"));
+            }
+            if (ConfigGeneral.disableEmeraldApple.get()) {
+                event.getRegistry().register(emerald_apple = new AppleEmerald(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.EMERALD_APPLE), "emerald_apple"));
+            }
+            if (ConfigGeneral.disableEnchantedEmeraldApple.get()) {
+                event.getRegistry().register(enchanted_emerald_apple = new AppleEmeraldEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_EMERALD_APPLE), "enchanted_emerald_apple"));
+            }
+            if (ConfigGeneral.disableIronApple.get()) {
+                event.getRegistry().register(iron_apple = new AppleIron(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.IRON_APPLE), "iron_apple"));
+            }
+            if (ConfigGeneral.disableEnchantedIronApple.get()) {
+                event.getRegistry().register(enchanted_iron_apple = new AppleIronEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_IRON_APPLE), "enchanted_iron_apple"));
+            }
+
+        }
     }
 }
