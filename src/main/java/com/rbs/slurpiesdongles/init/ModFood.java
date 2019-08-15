@@ -91,7 +91,7 @@ public class ModFood {
     public static Item enchanted_emerald_apple = null;
     public static Item iron_apple = null;
     public static Item enchanted_iron_apple = null;
-    public static final Item holy_bread = null;
+    public static Item holy_bread = null;
     //Seeds
     public static final Item corn_seed = null;
     public static final Item strawberry_seed = null;
@@ -159,13 +159,13 @@ public class ModFood {
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON), ModBlocks.lemon_crop, "lemon"),
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.orange_crop, "orange"),
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.tomato_crop, "tomato"),
-                //Regen Stuff
-                new HolyBread(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.HOLY_BREAD), "holy_bread"),
                 //Seeds
+
                 new CornSeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.corn_crop, "corn_seed"),
                 new StrawberrySeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.strawberry_crop, "strawberry_seed")
         );
         event.getRegistry().registerAll(); {
+            //Defensive Stuff
             if (ConfigGeneral.disableDiamondApple.get()) {
                 event.getRegistry().register(diamond_apple = new AppleDiamond(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.DIAMOND_APPLE), "diamond_apple"));
             }
@@ -183,6 +183,9 @@ public class ModFood {
             }
             if (ConfigGeneral.disableEnchantedIronApple.get()) {
                 event.getRegistry().register(enchanted_iron_apple = new AppleIronEnchanted(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ENCHANTED_IRON_APPLE), "enchanted_iron_apple"));
+            }
+            if (ConfigGeneral.disableHolyBread.get()) {
+                event.getRegistry().register(holy_bread = new HolyBread(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.HOLY_BREAD), "holy_bread"));
             }
 
         }

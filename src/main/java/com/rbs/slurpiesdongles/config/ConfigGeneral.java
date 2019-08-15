@@ -9,6 +9,7 @@ public class ConfigGeneral {
     //Actual Items
     public static ForgeConfigSpec.BooleanValue disableNetherStarChunk;
     public static ForgeConfigSpec.BooleanValue disablePopsSign;
+    public static ForgeConfigSpec.BooleanValue disableStoneRod;
     public static ForgeConfigSpec.BooleanValue disableTopazHandle;
     //Armor
     public static ForgeConfigSpec.BooleanValue disableAmazoniteArmor;
@@ -37,6 +38,7 @@ public class ConfigGeneral {
     public static ForgeConfigSpec.BooleanValue disableEnchantedEmeraldApple;
     public static ForgeConfigSpec.BooleanValue disableIronApple;
     public static ForgeConfigSpec.BooleanValue disableEnchantedIronApple;
+    public static ForgeConfigSpec.BooleanValue disableHolyBread;
     //Ores
     public static ForgeConfigSpec.BooleanValue amazoniteOreGeneration;
     public static ForgeConfigSpec.IntValue amazoniteOreChance;
@@ -130,6 +132,9 @@ public class ConfigGeneral {
         disablePopsSign = builder
                 .comment("Enable or disable Pops Sign [true / false default: false")
                 .define("Enable Pops Sign", false);
+        disableStoneRod = builder
+                .comment("Enable or disable the Stone Rod [true / false default: true")
+                .define("Enable Stone Rod", true);
         disableTopazHandle = builder
                 .comment("Enable or disable the Topaz Handle [true / false default: true")
                 .define("Enable Topaz Handle", true);
@@ -218,6 +223,10 @@ public class ConfigGeneral {
         disableEnchantedIronApple = builder
                 .comment("Enable or disable the Enchanted Iron Apple [true / false default: true")
                 .define("Enable Enchanted Iron Apple", true);
+        disableHolyBread = builder
+                .comment("Enable or disable Holy Bread [true / false default: true")
+                .define("Enable Holy Bread", true);
+
         builder.pop();
 
         //Ores
@@ -425,7 +434,6 @@ public class ConfigGeneral {
                 .defineInRange("Max height for Nether Redstone Ore", 128, 0, 128);
 
         builder.pop();
-
         //Tools
         builder.comment("Enable or disable tool sets").push("Tools");
         disableAmazoniteTools = builder

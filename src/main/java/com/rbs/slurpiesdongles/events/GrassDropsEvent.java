@@ -1,6 +1,7 @@
 package com.rbs.slurpiesdongles.events;
 
 import com.rbs.slurpiesdongles.Reference;
+import com.rbs.slurpiesdongles.config.ConfigGeneral;
 import com.rbs.slurpiesdongles.init.ModFood;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.item.ItemEntity;
@@ -28,12 +29,14 @@ public class GrassDropsEvent {
     {
 
         stacks = new ArrayList<ItemStack>();
+
         stacks.add(new ItemStack(ModFood.cabbage));
         stacks.add(new ItemStack(ModFood.corn_seed));
         stacks.add(new ItemStack(ModFood.lemon));
         stacks.add(new ItemStack(ModFood.orange));
         stacks.add(new ItemStack(ModFood.strawberry_seed));
         stacks.add(new ItemStack(ModFood.tomato));
+        stacks.add(new ItemStack(Items.WHEAT_SEEDS));
 
         if (event.getState().getBlock() == Blocks.GRASS)
         {
@@ -41,7 +44,7 @@ public class GrassDropsEvent {
 
                 if (event.getPlayer().getHeldItemMainhand().getItem() != Items.SHEARS) {
                     event.getWorld().setBlockState(event.getPos(), Blocks.AIR.getDefaultState(), 2);
-                    event.getWorld().addEntity(new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), stacks.get((int)((Math.random()*6)+1))));
+                    event.getWorld().addEntity(new ItemEntity((World) event.getWorld(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), stacks.get((int)((Math.random()*10)+1))));
                 }
             }
         }

@@ -48,11 +48,10 @@ public class ModItems {
  public static final Item topaz = null;
  //Actual Items
  public static final Item blender = null;
- public static final Item hot_water = null;
  public static final Item knife = null;
  public static Item nether_star_chunk = null;
  public static Item pops_sign = null;
- public static final Item stone_rod = null;
+ public static Item stone_rod = null;
  public static Item topaz_handle = null;
  public static final Item vmh_upgrade = null;
  public static final Item vmp_upgrade = null;
@@ -78,9 +77,8 @@ public class ModItems {
           new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz"),
           //Actual Items
           new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "blender"),
-          new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "hot_water"),
-          new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "knife"),
-          new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "stone_rod"),
+          new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "knife")
+          ,
           new WallOrFloorItem(ModBlocks.stone_torch, ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(ModBlocks.stone_torch.getRegistryName()),
           new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmh_upgrade"),
           new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmp_upgrade"),
@@ -137,6 +135,9 @@ public class ModItems {
   }
   if (ConfigGeneral.disablePopsSign.get()) {
    event.getRegistry().register(pops_sign = new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "pops_sign"));
+  }
+  if (ConfigGeneral.disableStoneRod.get()) {
+   event.getRegistry().register(stone_rod = new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "stone_rod"));
   }
   if (ConfigGeneral.disableTopazHandle.get()) {
    event.getRegistry().register(topaz_handle = new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_handle"));
