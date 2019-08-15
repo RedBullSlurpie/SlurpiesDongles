@@ -69,40 +69,29 @@ public class ModArmor {
             event.getRegistry().register(peridot_leggings = new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_leggings"));
             event.getRegistry().register(peridot_boots = new PeridotArmor(ArmorMaterials.PERIDOT, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "peridot_boots"));
         }
-            if (ConfigGeneral.disableRubyArmor.get()) {
-                event.getRegistry().register(ruby_helmet = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_helmet"));
-                event.getRegistry().register(ruby_chestplate = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_chestplate"));
-                event.getRegistry().register(ruby_leggings = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_leggings"));
-                event.getRegistry().register(ruby_boots = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_boots"));
-            }
-                if (ConfigGeneral.disableSapphireArmor.get()) {
-                    event.getRegistry().register(sapphire_helmet = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_helmet"));
-                    event.getRegistry().register(sapphire_chestplate = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_chestplate"));
-                    event.getRegistry().register(sapphire_leggings = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_leggings"));
-                    event.getRegistry().register(sapphire_boots = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_boots"));
-                }
-                    if (ConfigGeneral.disableTopazArmor.get()) {
-                        event.getRegistry().register(topaz_helmet = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_helmet"));
-                        event.getRegistry().register(topaz_chestplate = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_chestplate"));
-                        event.getRegistry().register(topaz_leggings = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_leggings"));
-                        event.getRegistry().register(topaz_boots = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_boots"));
-                    }
-                        if (ConfigGeneral.disableWitheredArmor.get()) {
-                            event.getRegistry().register(withered_helmet = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_helmet"));
-                            event.getRegistry().register(withered_chestplate = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_chestplate"));
-                            event.getRegistry().register(withered_leggings = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_leggings"));
-                            event.getRegistry().register(withered_boots = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_boots"));
-                        }
+        if (ConfigGeneral.disableRubyArmor.get()) {
+            event.getRegistry().register(ruby_helmet = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_helmet"));
+            event.getRegistry().register(ruby_chestplate = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_chestplate"));
+            event.getRegistry().register(ruby_leggings = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_leggings"));
+            event.getRegistry().register(ruby_boots = new RubyArmor(ArmorMaterials.RUBY, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "ruby_boots"));
+        }
+        if (ConfigGeneral.disableSapphireArmor.get()) {
+            event.getRegistry().register(sapphire_helmet = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_helmet"));
+            event.getRegistry().register(sapphire_chestplate = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_chestplate"));
+            event.getRegistry().register(sapphire_leggings = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_leggings"));
+            event.getRegistry().register(sapphire_boots = new SapphireArmor(ArmorMaterials.SAPPHIRE, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "sapphire_boots"));
+        }
+        if (ConfigGeneral.disableTopazArmor.get()) {
+            event.getRegistry().register(topaz_helmet = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_helmet"));
+            event.getRegistry().register(topaz_chestplate = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_chestplate"));
+            event.getRegistry().register(topaz_leggings = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_leggings"));
+            event.getRegistry().register(topaz_boots = new TopazArmor(ArmorMaterials.TOPAZ, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "topaz_boots"));
+        }
+        if (ConfigGeneral.disableWitheredArmor.get()) {
+            event.getRegistry().register(withered_helmet = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.HEAD, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_helmet"));
+            event.getRegistry().register(withered_chestplate = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.CHEST, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_chestplate"));
+            event.getRegistry().register(withered_leggings = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.LEGS, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_leggings"));
+            event.getRegistry().register(withered_boots = new WitheredArmor(ArmorMaterials.WITHERED, EquipmentSlotType.FEET, new Item.Properties().group(Reference.tabSlurpiesDongles), "withered_boots"));
+        }
     }
-
 }
-
-
-
-
-
-
-
-
-
-

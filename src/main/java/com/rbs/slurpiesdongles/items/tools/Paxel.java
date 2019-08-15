@@ -59,7 +59,7 @@ public class Paxel extends ToolItem {
             return i >= state.getHarvestLevel();
         }
         Material material = state.getMaterial();
-        return material == Material.ROCK || material == Material.IRON || material == Material.ANVIL || material == Material.WOOD;
+        return material == Material.ROCK || material == Material.IRON || material == Material.ANVIL || material == Material.WOOD || material == Material.GLASS || material == Material.CACTUS || material == Material.GOURD || material == Material.ICE || material == Material.PACKED_ICE;
 
     }
 
@@ -74,26 +74,28 @@ public class Paxel extends ToolItem {
 
         World world = useContext.getWorld();
         BlockPos blockpos = useContext.getPos();
-        BlockState blockstate = world.getBlockState(blockpos);
-        Block block = BLOCK_STRIPPING_MAP.get(blockstate.getBlock());
+        BlockState iblockstate = world.getBlockState(blockpos);
+        Block block = BLOCK_STRIPPING_MAP.get(iblockstate.getBlock());
         if (block != null) {
-            PlayerEntity playerentity = useContext.getPlayer();
-            world.playSound(playerentity, blockpos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            PlayerEntity entityplayer = useContext.getPlayer();
+            world.playSound(entityplayer, blockpos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
             if (!world.isRemote) {
-                world.setBlockState(blockpos, block.getDefaultState().with(RotatedPillarBlock.AXIS, blockstate.get(RotatedPillarBlock.AXIS)), 11);
-                if (playerentity != null) {
-                    useContext.getItem().damageItem(1, playerentity, (p_220040_1_) -> {
-                        p_220040_1_.sendBreakAnimation(useContext.getHand());
+                world.setBlockState(blockpos, block.getDefaultState().with(RotatedPillarBlock.AXIS, iblockstate.get(RotatedPillarBlock.AXIS)), 11);
+                if (entityplayer != null) {
+                    useContext.getItem().damageItem(1, entityplayer, (p_220040_1_) -> {
+                        p_220040_1_.sendBreakAnimation(EquipmentSlotType.MAINHAND);
                     });
                 }
+
             }
 
             return ActionResultType.SUCCESS;
         }
 
+
         World world1 = useContext.getWorld();
         BlockPos blockpos1 = useContext.getPos();
-        if (useContext.getFace() != Direction.DOWN && world.getBlockState(blockpos.up()).isAir(world1, blockpos1)) {
+        if (useContext.getFace() != Direction.DOWN && world.getBlockState(blockpos.up()).isAir()) {
             BlockState iblockstate1 = field_195955_e.get(world.getBlockState(blockpos).getBlock());
 
             if (iblockstate1 != null) {
@@ -102,9 +104,7 @@ public class Paxel extends ToolItem {
                 if (!world.isRemote) {
                     world1.setBlockState(blockpos1, iblockstate1, 11);
                     if (entityplayer != null) {
-                        useContext.getItem().damageItem(1, entityplayer, (p_220040_1_) -> {
-                            p_220040_1_.sendBreakAnimation(useContext.getHand());
-                        });
+                        useContext.getItem().setDamage(1);
                     }
                 }
             }
@@ -123,9 +123,7 @@ public class Paxel extends ToolItem {
                     if (!world.isRemote) {
                         world2.setBlockState(blockpos2, iblockstate3, 11);
                         if (entityplayer2 != null) {
-                            useContext.getItem().damageItem(1, entityplayer2, (p_220040_1_) -> {
-                                p_220040_1_.sendBreakAnimation(useContext.getHand());
-                            });
+                            useContext.getItem().setDamage(1);
                         }
                     }
                 }
@@ -136,7 +134,6 @@ public class Paxel extends ToolItem {
 
         return ActionResultType.PASS;
     }
-
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         tooltip.add(new StringTextComponent(TextFormatting.YELLOW + "Right click Grass to make a path, shift right click Grass to till it, and right click Logs to strip them"));

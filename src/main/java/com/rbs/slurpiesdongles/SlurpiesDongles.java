@@ -33,11 +33,9 @@ public class SlurpiesDongles {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public SlurpiesDongles() {
-
-        //Config
+        //Config Stuff
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CoreConfig.SPEC, "SlurpiesDongles-General.toml");
         CoreConfig.loadConfig(CoreConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve("SlurpiesDongles-General.toml".toString()));
-
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -51,12 +49,16 @@ public class SlurpiesDongles {
         Configuration.init();
 
 
+
+
+
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         MinecraftForge.EVENT_BUS.register(new PigDrops());
         OreGenerator.setupOreGen();
+       // MinecraftForge.EVENT_BUS.register(new GrassDrops());
 
     }
 
@@ -80,6 +82,7 @@ public class SlurpiesDongles {
             // do something when the server starts
 
         }
+
     }
 
 

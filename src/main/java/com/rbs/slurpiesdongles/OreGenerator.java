@@ -7,6 +7,7 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import static net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType.NATURAL_STONE;
@@ -62,6 +63,7 @@ public class OreGenerator {
             if (ConfigGeneral.netherRedstoneOreGeneration.get()) {
                 biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(NETHERRACK, ModBlocks.nether_redstone_ore.getDefaultState(), ConfigGeneral.netherRedstoneOreSize.get().intValue()), COUNT_RANGE, new CountRangeConfig(ConfigGeneral.netherRedstoneOreChance.get(), ConfigGeneral.netherRedstoneOreMinHeight.get(), ConfigGeneral.netherRedstoneOreMinHeight.get(), ConfigGeneral.netherRedstoneOreMaxHeight.get())));
             }
+
         }
     }
 }

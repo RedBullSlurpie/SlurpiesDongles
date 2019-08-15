@@ -1,6 +1,5 @@
 package com.rbs.slurpiesdongles.config;
 
-import com.rbs.slurpiesdongles.food.AppleEmeraldEnchanted;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public class ConfigGeneral {
@@ -38,7 +37,7 @@ public class ConfigGeneral {
     public static ForgeConfigSpec.BooleanValue disableEnchantedEmeraldApple;
     public static ForgeConfigSpec.BooleanValue disableIronApple;
     public static ForgeConfigSpec.BooleanValue disableEnchantedIronApple;
-    public static ForgeConfigSpec.BooleanValue disableHolyBread;
+     public static ForgeConfigSpec.BooleanValue disableHolyBread;
     //Ores
     public static ForgeConfigSpec.BooleanValue amazoniteOreGeneration;
     public static ForgeConfigSpec.IntValue amazoniteOreChance;
@@ -223,9 +222,9 @@ public class ConfigGeneral {
         disableEnchantedIronApple = builder
                 .comment("Enable or disable the Enchanted Iron Apple [true / false default: true")
                 .define("Enable Enchanted Iron Apple", true);
-        disableHolyBread = builder
-                .comment("Enable or disable Holy Bread [true / false default: true")
-                .define("Enable Holy Bread", true);
+         disableHolyBread = builder
+         .comment("Enable or disable Holy Bread [true / false default: true")
+         .define("Enable Holy Bread", true);
 
         builder.pop();
 

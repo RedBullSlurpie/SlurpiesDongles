@@ -95,6 +95,7 @@ public class ModFood {
     //Seeds
     public static final Item corn_seed = null;
     public static final Item strawberry_seed = null;
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().registerAll(
@@ -138,7 +139,7 @@ public class ModFood {
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.RABBIT_LEG), "rabbit_leg"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.RAW_BACON), "raw_bacon"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.RAW_BEEF_SLICE), "raw_beef_slice"),
-                new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles),"raw_corn"),
+                new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "raw_corn"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ROASTED_APPLE), "roasted_apple"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ROASTED_BEETROOT_SEEDS), "roasted_beetroot_seeds"),
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ROASTED_MELON_SEEDS), "roasted_melon_seeds"),
@@ -156,15 +157,16 @@ public class ModFood {
                 new FoodBase(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOASTED_BACON_EGG_SANDWICH), "toasted_bacon_egg_sandwitch"),
                 //Food but Crops
                 new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.CABBAGE), ModBlocks.cabbage_crop, "cabbage"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON), ModBlocks.lemon_crop, "lemon"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.orange_crop, "orange"),
-                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.tomato_crop, "tomato"),
-                //Seeds
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.LEMON), ModBlocks.cabbage_crop, "lemon"),
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.ORANGE), ModBlocks.cabbage_crop, "orange"),
+                new FoodBaseSeed(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.TOMATO), ModBlocks.cabbage_crop, "tomato"),
 
+                //Seeds
                 new CornSeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.corn_crop, "corn_seed"),
                 new StrawberrySeeds(new Item.Properties().group(Reference.tabSlurpiesDongles), ModBlocks.strawberry_crop, "strawberry_seed")
         );
-        event.getRegistry().registerAll(); {
+        event.getRegistry().registerAll();
+        {
             //Defensive Stuff
             if (ConfigGeneral.disableDiamondApple.get()) {
                 event.getRegistry().register(diamond_apple = new AppleDiamond(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.DIAMOND_APPLE), "diamond_apple"));
@@ -187,7 +189,6 @@ public class ModFood {
             if (ConfigGeneral.disableHolyBread.get()) {
                 event.getRegistry().register(holy_bread = new HolyBread(new Item.Properties().group(Reference.tabSlurpiesDongles).food(FoodStats.HOLY_BREAD), "holy_bread"));
             }
-
         }
     }
 }

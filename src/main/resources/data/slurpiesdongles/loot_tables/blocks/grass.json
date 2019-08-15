@@ -25,7 +25,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.010
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -41,7 +41,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "slurpiesdongles:strawberry_seed"
+              "name": "minecraft:wheat_seeds"
             },
             
              {
@@ -49,7 +49,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.010
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -73,7 +73,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.010
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -98,7 +98,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.010
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -123,7 +123,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.010
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -148,7 +148,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.015
+                  "chance": 0.005
                 }
               ],
               "functions": [
@@ -165,7 +165,34 @@
                 }
               ],
               "name": "slurpiesdongles:corn_seed"
-            }                       
+            },
+            
+             
+             {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.005
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:apply_bonus",
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:uniform_bonus_count",
+                  "parameters": {
+                    "bonusMultiplier": 2
+                  }
+                },
+                {
+                  "function": "minecraft:explosion_decay"
+                }
+              ],
+              "name": "slurpiesdongles:strawberry_seed"
+            }
+            
+            
          ]
         }
       ]

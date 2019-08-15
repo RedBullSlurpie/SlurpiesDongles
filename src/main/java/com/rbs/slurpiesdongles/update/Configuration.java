@@ -28,9 +28,6 @@ import org.apache.commons.lang3.tuple.Pair;
                     .translation("text.configuration.show_new_update_notifications")
                     .define("new_update_notifications", true);
             builder.pop();
-
-
         }
     }
-
 }
