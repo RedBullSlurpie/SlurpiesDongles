@@ -8,7 +8,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 
 public class CustomAxe extends AxeItem {
-    public CustomAxe(IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder, HarvestLevelHelper resource, String name) {
+    public CustomAxe(IItemTier tier, int attackDamageIn, float attackSpeedIn, Item.Properties builder , String name) {
         super(tier, attackDamageIn, attackSpeedIn, builder);
 
         this.setRegistryName(Reference.MODID, name);
