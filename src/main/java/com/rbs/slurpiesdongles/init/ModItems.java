@@ -116,6 +116,7 @@ public class ModItems {
                 createItemBlockForBlock(ModBlocks.orange_crop, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.strawberry_crop, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.tomato_crop, new Item.Properties().group(Reference.tabSlurpiesDongles)),
+                createItemBlockForBlock(ModBlocks.wild_crops, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 //Ores
                 createItemBlockForBlock(ModBlocks.amazonite_ore, new Item.Properties().group(Reference.tabSlurpiesDongles)),
                 createItemBlockForBlock(ModBlocks.amethyst_ore, new Item.Properties().group(Reference.tabSlurpiesDongles)),
@@ -181,6 +182,10 @@ public class ModItems {
      if (ConfigGeneral.disableWaterbreathingCharm.get()) {
       event.getRegistry().register(water_breathing_charm = new WaterBreathingCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "water_breathing_charm"));
      }
+     //Crops
+     //if (ConfigGeneral.disableWildCrops.get()) {
+         //createItemBlockForBlock(ModBlocks.wild_crops, new Item.Properties().group(Reference.tabSlurpiesDongles));
+     //}
 
     }
 

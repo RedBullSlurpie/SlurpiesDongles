@@ -3,6 +3,9 @@ package com.rbs.slurpiesdongles;
 import com.rbs.slurpiesdongles.config.CoreConfig;
 import com.rbs.slurpiesdongles.events.PigDrops;
 import com.rbs.slurpiesdongles.update.Configuration;
+import com.rbs.slurpiesdongles.world.OreGenerator;
+import com.rbs.slurpiesdongles.world.WildCropsWorldGen;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -18,6 +21,7 @@ import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.annotation.Nonnull;
 import java.util.Random;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -36,6 +40,7 @@ public class SlurpiesDongles {
         //Config Stuff
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CoreConfig.SPEC, "SlurpiesDongles-General.toml");
         CoreConfig.loadConfig(CoreConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve("SlurpiesDongles-General.toml".toString()));
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(WildCropsWorldGen::registerAll);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -49,40 +54,40 @@ public class SlurpiesDongles {
         Configuration.init();
 
 
-
-
-
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         MinecraftForge.EVENT_BUS.register(new PigDrops());
         OreGenerator.setupOreGen();
-       // MinecraftForge.EVENT_BUS.register(new GrassDrops());
 
     }
 
-    private void doClientStuff ( final FMLClientSetupEvent event){
-            // do something that can only be done on the client
-        }
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        // do something that can only be done on the client
+    }
 
-        private void enqueueIMC ( final InterModEnqueueEvent event)
-        {
-            // some example code to dispatch IMC to another mod
-        }
+    private void enqueueIMC(final InterModEnqueueEvent event) {
+        // some example code to dispatch IMC to another mod
+    }
 
-        private void processIMC ( final InterModProcessEvent event)
-        {
-            // some example code to receive and process InterModComms from other mods
-
-        }
-        // You can use SubscribeEvent and let the Event Bus discover methods to call
-        @SubscribeEvent
-        public static void onServerStarting (FMLServerStartingEvent event){
-            // do something when the server starts
-
-        }
+    private void processIMC(final InterModProcessEvent event) {
+        // some example code to receive and process InterModComms from other mods
 
     }
+
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    @SubscribeEvent
+    public static void onServerStarting(FMLServerStartingEvent event) {
+        // do something when the server starts
+
+    }
+
+    @Nonnull
+    public static ResourceLocation getId(String path)
+    {
+        return new ResourceLocation(Reference.MODID, path);
+    }
+}
 
 

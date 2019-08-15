@@ -2,9 +2,11 @@ package com.rbs.slurpiesdongles.init;
 
 import com.rbs.slurpiesdongles.Reference;
 import com.rbs.slurpiesdongles.blocks.*;
+import com.rbs.slurpiesdongles.config.ConfigGeneral;
 import com.rbs.slurpiesdongles.helpers.HarvestLevelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.TorchBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -54,6 +56,7 @@ public class ModBlocks {
     public static final Block orange_crop = null;
     public static final Block strawberry_crop = null;
     public static final Block tomato_crop = null;
+    public static final Block wild_crops = null;
     //Ores
     public static final Block amazonite_ore = null;
     public static final Block amethyst_ore = null;
@@ -104,6 +107,7 @@ public class ModBlocks {
                 new OrangeCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "orange_crop"),
                 new StrawberryCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "strawberry_crop"),
                 new TomatoCrop(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().sound(SoundType.CROP).hardnessAndResistance(0.0F), "tomato_crop"),
+                new WildCrops(Block.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().sound(SoundType.PLANT).hardnessAndResistance(0), "wild_crops" ),
                 //Ores
                 new AmazoniteOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), HarvestLevelHelper.DIAMOND, "amazonite_ore"),
                 new AmethystOre(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0F, 3.0F), HarvestLevelHelper.DIAMOND, "amethyst_ore"),

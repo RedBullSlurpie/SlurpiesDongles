@@ -30,6 +30,9 @@ public class ConfigGeneral {
     public static ForgeConfigSpec.BooleanValue disableStrengthCharm;
     public static ForgeConfigSpec.BooleanValue disableStrengthCharmTier2;
     public static ForgeConfigSpec.BooleanValue disableWaterbreathingCharm;
+    //Crops
+    public static ForgeConfigSpec.BooleanValue disableWildCrops;
+    public static ForgeConfigSpec.IntValue wildCropsChance;
     //Food
     public static ForgeConfigSpec.BooleanValue disableDiamondApple;
     public static ForgeConfigSpec.BooleanValue disableEnchantedDiamondApple;
@@ -200,6 +203,18 @@ public class ConfigGeneral {
         disableWaterbreathingCharm = builder
                 .comment("Setting this to false will disable the Waterbreathing Charm [true / false default: true]")
                 .define("Enable Waterbreathing Charm", true);
+        builder.pop();
+
+        //Crops
+        builder.comment("Crop Tweaks").push("Crops");
+        disableWildCrops = builder
+                .comment("Enable or Disable Wild Crops [true / false default: true]")
+                .define("Enable Wild Crops", true);
+
+        wildCropsChance = builder
+                .comment("Chance of wild crops generating in the overworld. Higher numbers mean a lower spawn chance [default: 10]")
+                .defineInRange("Chance of Wild Crops spawning", 10, 0, 1000000000);
+
         builder.pop();
 
         //Food
