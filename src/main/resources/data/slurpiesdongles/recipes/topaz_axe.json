@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "BHB",
-    "HHH",
-    "BHB"
+    "TT ",
+    "TH ",
+    " H "
   ],
   "key": {
     "H": {
-    "item": "minecraft:iron_bars"
+      "item": "slurpiesdongles:topaz_handle"
     },
-    "B": {
-    "item": "minecraft:obsidian"
+    "T": {
+      "item": "slurpiesdongles:topaz"
     }
   },
   "result": {
-    "item": "slurpiesdongles:reinforced_obsidian"
+    "item": "slurpiesdongles:topaz_axe"
   }
 }
