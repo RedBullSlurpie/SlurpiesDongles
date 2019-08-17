@@ -47,8 +47,8 @@ public class UpdateChecker {
         if (!isNewerVersion(info.getVersion().toString(), result.target.toString())) {//result.target.compareTo(Loader.instance().activeModContainer().getVersion()) <= 0) {
             return;
         }
-        System.out.println("Update available for Slurpie's Dongles");
-        event.getPlayer().sendMessage(new TranslationTextComponent("text.new_update_notification", TextFormatting.GOLD + "Slurpie's Dongles! " + TextFormatting.DARK_AQUA + "Version " +result.target.toString()));
+        System.out.println("Update available for Ray's Dongles");
+        event.getPlayer().sendMessage(new TranslationTextComponent("text.new_update_notification", TextFormatting.GOLD + "Ray's Dongles! " + TextFormatting.DARK_AQUA + "Version " +result.target.toString()));
     }
 
 }
