@@ -56,6 +56,7 @@ public class ModItems {
     public static Item pops_sign = null;
     public static Item stone_rod = null;
     public static Item topaz_handle = null;
+    public static final Item vme_upgrade = null;
     public static final Item vmh_upgrade = null;
     public static final Item vmp_upgrade = null;
 
@@ -83,6 +84,7 @@ public class ModItems {
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "hot_water"),
                 new ContainerItem(new Item.Properties().group(Reference.tabSlurpiesDongles), "knife"),
                 new WallOrFloorItem(ModBlocks.stone_torch, ModBlocks.wall_stone_torch, new Item.Properties().group(Reference.tabSlurpiesDongles)).setRegistryName(ModBlocks.stone_torch.getRegistryName()),
+                new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vme_upgrade"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmh_upgrade"),
                 new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "vmp_upgrade"),
                 //Block Items
