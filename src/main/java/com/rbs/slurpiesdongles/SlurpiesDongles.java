@@ -38,8 +38,8 @@ public class SlurpiesDongles {
 
     public SlurpiesDongles() {
         //Config Stuff
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CoreConfig.SPEC, "SlurpiesDongles-General.toml");
-        CoreConfig.loadConfig(CoreConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve("SlurpiesDongles-General.toml".toString()));
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, CoreConfig.SPEC, "Ray's Dongles-General.toml");
+        CoreConfig.loadConfig(CoreConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve("Ray's Dongles-General.toml".toString()));
         FMLJavaModLoadingContext.get().getModEventBus().addListener(WildCropsWorldGen::registerAll);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);

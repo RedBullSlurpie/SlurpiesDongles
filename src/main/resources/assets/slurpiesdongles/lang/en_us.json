@@ -1,5 +1,5 @@
 {
-  "itemGroup.SlurpiesDongles": "Slurpie's Dongles",
+  "itemGroup.RaysDongles": "Ray's Dongles",
   "text.new_update_notification": "A new update is available for {0}.",
 
   "__comment": "Armors",
@@ -242,6 +242,7 @@
   "item.slurpiesdongles.blender": "Blender",
   "item.slurpiesdongles.end_scale": "Dragon Scale",
   "item.slurpiesdongles.hot_water": "Hot Water",
+  "item.slurpiesdongles.infinite_water_bucket": "Infinite Water Bucket",
   "item.slurpiesdongles.knife": "Knife",
   "item.slurpiesdongles.nether_star_chunk": "Nether Star Chunk",
   "item.slurpiesdongles.pops_sign": "Pop's Sign",

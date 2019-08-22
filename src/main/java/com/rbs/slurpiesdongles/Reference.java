@@ -10,7 +10,7 @@ public class Reference {
 
     public static final String MODID = "slurpiesdongles";
 
-    public static ItemGroup tabSlurpiesDongles = new ItemGroup(ItemGroup.getGroupCountSafe(), "SlurpiesDongles") {
+    public static ItemGroup tabSlurpiesDongles = new ItemGroup(ItemGroup.getGroupCountSafe(), "RaysDongles") {
         @Override
         public ItemStack createIcon() {
             return new ItemStack( ModFood.enchanted_diamond_apple);

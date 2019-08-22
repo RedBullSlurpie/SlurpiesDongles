@@ -14,22 +14,22 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 # The modid of the mod
 modId="slurpiesdongles" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
-version="2.0.4a" #mandatory
+version="2.0.4b" #mandatory
  # A display name for the mod
-displayName="Slurpie's Dongles" #mandatory
+displayName="Ray's Dongles" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="https://raw.githubusercontent.com/RedBullSlurpie/SlurpiesDongles/1.14.4/update.json" #optional
+updateJSONURL="https://raw.githubusercontent.com/RayzoRayy/RaysDongles/1.14.4/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="https://github.com/RedBullSlurpie/SlurpiesDongles/wiki" #optional
+displayURL="https://github.com/RayzoRayy/RaysDongles/wiki" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks for everyones support with this mod!" #optional
 # A text field displayed in the mod UI
-authors="RedBullSlurpie" #optional
+authors="RayzoRay" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Please see https://minecraft.curseforge.com/projects/slurpies-dongles for more info on my mod, however, if you see this message, I hope that you have got my mod from Curse Forge! Any other site
+Please see https://www.curseforge.com/minecraft/mc-mods/slurpies-dongles for more info on my mod, however, if you see this message, I hope that you have got my mod from Curse Forge! Any other site
 does NOT have my permission to host my mod, and may contain malware or viruses. I support Curse Forge only.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.

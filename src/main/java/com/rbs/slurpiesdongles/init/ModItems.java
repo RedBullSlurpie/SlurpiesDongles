@@ -5,6 +5,7 @@ import com.rbs.slurpiesdongles.config.ConfigGeneral;
 import com.rbs.slurpiesdongles.items.*;
 import com.rbs.slurpiesdongles.items.charms.*;
 import net.minecraft.block.Block;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.WallOrFloorItem;
@@ -51,6 +52,7 @@ public class ModItems {
     public static final Item topaz = null;
     //Actual Items
     public static final Item blender = null;
+    public static Item infinite_water_bucket = null;
     public static final Item knife = null;
     public static Item nether_star_chunk = null;
     public static Item pops_sign = null;
@@ -149,46 +151,44 @@ public class ModItems {
         if (ConfigGeneral.disableStoneRod.get()) {
         event.getRegistry().register(stone_rod = new ItemBase(new Item.Properties().group(Reference.tabSlurpiesDongles), "stone_rod"));
         }
+        if (ConfigGeneral.disableInfiniteWaterBucket.get()) {
+            event.getRegistry().register(infinite_water_bucket = new InfiniteWaterBucket(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "infinite_water_bucket", Fluids.WATER));
+        }
 
      //Charms
      if (ConfigGeneral.disableFireResistanceCharm.get()) {
-      event.getRegistry().register(fire_resistance_charm = new FireCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "fire_resistance_charm"));
+      event.getRegistry().register(fire_resistance_charm = new FireCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "fire_resistance_charm"));
      }
      if (ConfigGeneral.disableAbsorptionCharm.get()) {
-      event.getRegistry().register(absorption_charm = new AbsorptionCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "absorption_charm"));
+      event.getRegistry().register(absorption_charm = new AbsorptionCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "absorption_charm"));
      }
      if (ConfigGeneral.disableAbsorptionCharmTier2.get()) {
-      event.getRegistry().register(absorption_charm_tier_2 = new AbsorptionCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles), "absorption_charm_tier_2"));
+      event.getRegistry().register(absorption_charm_tier_2 = new AbsorptionCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "absorption_charm_tier_2"));
      }
      if (ConfigGeneral.disableNightVisionCharm.get()) {
-      event.getRegistry().register(night_vision_charm = new NightVisionCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "night_vision_charm"));
+      event.getRegistry().register(night_vision_charm = new NightVisionCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "night_vision_charm"));
      }
      if (ConfigGeneral.disableRegenerationCharm.get()) {
-      event.getRegistry().register(regen_charm = new RegenerationCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "regen_charm"));
+      event.getRegistry().register(regen_charm = new RegenerationCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "regen_charm"));
      }
      if (ConfigGeneral.disableRegenerationCharmTier2.get()) {
-      event.getRegistry().register(regen_charm_tier_2 = new RegenerationCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles), "regen_charm_tier_2"));
+      event.getRegistry().register(regen_charm_tier_2 = new RegenerationCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "regen_charm_tier_2"));
      }
      if (ConfigGeneral.disableSpeedCharm.get()) {
-      event.getRegistry().register(speed_charm = new SpeedCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "speed_charm"));
+      event.getRegistry().register(speed_charm = new SpeedCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "speed_charm"));
      }
      if (ConfigGeneral.disableSpeedCharmTier2.get()) {
-      event.getRegistry().register(speed_charm_tier_2 = new SpeedCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles), "speed_charm_tier_2"));
+      event.getRegistry().register(speed_charm_tier_2 = new SpeedCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "speed_charm_tier_2"));
      }
      if (ConfigGeneral.disableStrengthCharm.get()) {
-      event.getRegistry().register(strength_charm = new StrengthCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "strength_charm"));
+      event.getRegistry().register(strength_charm = new StrengthCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "strength_charm"));
      }
      if (ConfigGeneral.disableStrengthCharmTier2.get()) {
-      event.getRegistry().register(strength_charm_tier_2 = new StrengthCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles), "strength_charm_tier_2"));
+      event.getRegistry().register(strength_charm_tier_2 = new StrengthCharmTier2(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "strength_charm_tier_2"));
      }
      if (ConfigGeneral.disableWaterbreathingCharm.get()) {
-      event.getRegistry().register(water_breathing_charm = new WaterBreathingCharm(new Item.Properties().group(Reference.tabSlurpiesDongles), "water_breathing_charm"));
+      event.getRegistry().register(water_breathing_charm = new WaterBreathingCharm(new Item.Properties().group(Reference.tabSlurpiesDongles).maxStackSize(1), "water_breathing_charm"));
      }
-     //Crops
-     //if (ConfigGeneral.disableWildCrops.get()) {
-         //createItemBlockForBlock(ModBlocks.wild_crops, new Item.Properties().group(Reference.tabSlurpiesDongles));
-     //}
-
     }
 
 

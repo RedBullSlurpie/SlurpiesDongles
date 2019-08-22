@@ -14,7 +14,7 @@ import org.apache.commons.lang3.tuple.Pair;
         Pair<Common, ForgeConfigSpec> commonPair = new ForgeConfigSpec.Builder().configure(Common::new);
         COMMON_SPEC = commonPair.getRight();
         COMMON = commonPair.getLeft();
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_SPEC, "Ray's Dongles-Common.toml");
     }
 
     public static class Common {

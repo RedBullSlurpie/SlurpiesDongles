@@ -6,6 +6,7 @@ public class ConfigGeneral {
     public static ConfigGeneral INSTANCE;
 
     //Actual Items
+    public static ForgeConfigSpec.BooleanValue disableInfiniteWaterBucket;
     public static ForgeConfigSpec.BooleanValue disableNetherStarChunk;
     public static ForgeConfigSpec.BooleanValue disablePopsSign;
     public static ForgeConfigSpec.BooleanValue disableStoneRod;
@@ -128,6 +129,9 @@ public class ConfigGeneral {
     public static void init(ForgeConfigSpec.Builder builder) {
         //Actual Items
         builder.comment("Enable or disable certain items").push("Items");
+        disableInfiniteWaterBucket = builder
+                .comment("Enable or disable Infinite Water Bucket [true / false default: true")
+                .define("Enable Infinite Water Bucket", true);
         disableNetherStarChunk = builder
                 .comment("Enable or disable Nether Star chunks [ true / false default: true")
                 .define("Enable Nether Star chunks", true);
